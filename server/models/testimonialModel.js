@@ -1,25 +1,29 @@
 const mongoose = require("mongoose");
 
 const TestimonialsSchema = mongoose.Schema({
-  Title: {
+  title: {
     type: String,
     required: true,
   },
-  Desc: {
+  desc: {
     type: String,
     required: true,
   },
-  CreationDate: {
+  email: {
+    type: String,
+    required: true,
+  },
+  creationDate: {
     type: Date,
     default: Date.now(),
   },
-  Rating: {
+  rating: {
     type: Number,
     min: 1,
     max: 5,
     required: false,
   },
-  Approved: {
+  approved: {
     type: Boolean,
     default: false,
   },

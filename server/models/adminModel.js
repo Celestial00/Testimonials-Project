@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 
 const AdminSchema = mongoose.Schema({
-  Handle: {
+  handle: {
     type: String,
     required: true,
   },
-  Password: {
+  password: {
     type: String,
     required: true,
   },
