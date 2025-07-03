@@ -17,11 +17,16 @@ const TestimonialsSchema = mongoose.Schema({
     type: Date,
     default: Date.now(),
   },
-  rating: {
-    type: Number,
-    min: 1,
-    max: 5,
-    required: false,
+  ratings: [
+    {
+      name: { type: String, required: true },
+      desc: { type: String, required: true },
+      score: { type: Number, min: 1, max: 6, required: true },
+    },
+  ],
+  showData:{
+    type: Boolean,
+    default: false,
   },
   approved: {
     type: Boolean,

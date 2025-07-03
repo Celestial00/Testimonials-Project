@@ -1,1 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 @import "tailwindcss";
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(-1deg);
+  }
+  50% {
+    transform: rotate(1deg);
+  }
+}
+
+.wiggle {
+  animation: wiggle 1.6s ease-in-out infinite;
+  display: inline-block;
+}
+

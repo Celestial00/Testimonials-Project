@@ -5,13 +5,17 @@ const TestimonialRouter = require("./routes/TestimonialsRoute.js");
 const AdminRouter = require("./routes/adminRoute.js");
 const RateLimiter = require("./middleware/Limiter.js");
 const ErrorHandler = require("./middleware/ErrorHandler.js");
-
+const cors = require("cors");
 require("dotenv").config();
+
 const app = express();
+
+
 
 // Middlware
 app.use(express.json());
 app.use(Logger);
+app.use(cors())
 // app.use(RateLimiter);
 
 //Routes

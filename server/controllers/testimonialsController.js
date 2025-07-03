@@ -67,7 +67,38 @@ const testimonialsDelete = async (req, res) => {
   }
 };
 
+const testimonialsReviewAdd = async (req, res) => {
+  const { id, name, desc, score } = req.body;
+
+  try {
+    const UpdateReview = await TestModel.findByIdAndUpdate(
+      id,
+      {
+        $push: {
+          ratings: {
+            name,
+            desc,
+            score,
+          },
+        },
+      },
+      { new: true }
+    );
+
+    if (!UpdateReview) {
+      return res.status(404).json({ response: "Not Found" });
+    }
+    res.status(200).json({ response: "ok", Data: UpdateReview });
+  } catch (err) {
+    res.status(500).json({ error: err.message || "Internal server error" });
+  }
+};
+
+
+
+
 module.exports = {
+  testimonialsReviewAdd,
   testimonialsAdd,
   testimonialsGet,
   testimonialsApprove,

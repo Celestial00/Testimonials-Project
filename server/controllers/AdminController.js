@@ -2,9 +2,9 @@ const bcryptjs = require("bcryptjs");
 const adminModel = require("../models/adminModel");
 const jwt = require("jsonwebtoken");
 
-
 const adminControllers = async (req, res) => {
   const { handle, password } = req.body;
+  
   try {
     const Admin = await adminModel.findOne({ handle: handle.toLowerCase() });
 
