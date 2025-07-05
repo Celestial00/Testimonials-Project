@@ -13,7 +13,8 @@ import EvaluationForm from "./pages/evaluate";
 import ReviewsPage from "./pages/AllReviews";
 import RankingPage from "./pages/Ranking";
 import PrivacyPolicy from "./pages/PrivacyPage";
-import EvaluationPage from './pages/EvaluationPage'
+import EvaluationPage from "./pages/EvaluationPage";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
           {/* Public Routes */}
           <Route element={<Mainlayout />}>
             <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
+
             <Route path="/about" element={<AboutUs />} />
             <Route path="/FAQ" element={<FAQPage />} />
             <Route path="/Evaluate" element={<EvaluationForm />} />
@@ -31,10 +32,12 @@ function App() {
             <Route path="/Rankings" element={<RankingPage />} />
             <Route path="/Policy" element={<PrivacyPolicy />} />
             <Route path="/Evaluation" element={<EvaluationPage />} />
+            <Route path="/Contact" element={<Contact />} />
           </Route>
 
           {/* Protected Routes */}
           <Route element={<ProtectedRoutes />}>
+            <Route path="/admin" element={<Login />} />
             <Route path="/dashboard" element={<Dashboard />} />
           </Route>
 

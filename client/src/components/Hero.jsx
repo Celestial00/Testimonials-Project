@@ -16,7 +16,7 @@ const HeroSection = () => {
           Evaluation For more transparency on the way to becoming a Dr. med.
         </h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 justify-center">
           {/* Box 1 */}
 
           <div
@@ -50,12 +50,7 @@ const HeroSection = () => {
             </div>
           </Link>
           {/* Box 4 */}
-          <div className="bg-white shadow-xl cursor-pointer p-8 sm:p-10 w-full h-48 sm:h-56 rounded-2xl flex flex-col items-center justify-center hover:shadow-2xl transition">
-            <p className="text-lg sm:text-xl font-semibold mb-3 text-gray-800">
-              Certified
-            </p>
-            <BadgeCheck size={36} className="text-blue-500" />
-          </div>
+   
         </div>
       </div>
     </section>

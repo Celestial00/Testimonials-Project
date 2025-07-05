@@ -5,15 +5,11 @@ export default function EvaluationPage() {
   const navigate = useNavigate();
 
   // Accept data from any known keys
-  const {
-    review,
-    feedback,
-    evaluation,
-    formData,
-    data,
-  } = location.state || {};
+  const { review, feedback, evaluation, formData, data } = location.state || {};
 
-  const finalData = review || feedback || evaluation || formData || data;
+  const raw = review || feedback || evaluation || formData || data;
+  const merged = Array.isArray(raw) ? mergeEvaluationData(raw) : raw;
+  const finalData = normalizeFields(merged);
 
   if (!finalData)
     return (
@@ -39,7 +35,7 @@ export default function EvaluationPage() {
           { label: "Country", value: finalData.country },
           { label: "City", value: finalData.city || "-" },
           { label: "University", value: finalData.university },
-          { label: "Specialization", value: finalData.specialization || finalData.specification },
+          { label: "Specialization", value: finalData.specialization },
           { label: "Working group / Chair", value: finalData.workingGroup || "-" },
         ]} />
 
@@ -85,6 +81,58 @@ export default function EvaluationPage() {
       </div>
     </div>
   );
+}
+
+// Merge multiple objects into one
+function mergeEvaluationData(dataArray) {
+  return dataArray.reduce((acc, obj) => ({ ...acc, ...obj }), {});
+}
+
+// Normalize field names into a unified schema
+function normalizeFields(obj = {}) {
+  return {
+    country: obj.selectedCountry,
+    city: obj.selectedCity,
+    university: obj.selectedUniversity,
+    specialization: obj.speciality,
+    workingGroup: obj.workingGroup,
+
+    title: obj.dissertationTitle,
+    status: obj.projectStatus,
+    degree: obj.degree,
+    degreeLevel: obj.degreeLevel,
+    projectStart: obj.projectStartDate,
+    projectEnd: obj.projectEndDate,
+    researchMethod: obj.researchMethodology,
+    compulsorySabbatical: obj.freeSemesters,
+    form: obj.dissertationFormat,
+    publications: obj.researchPublication,
+    firstAuthor: obj.firstAuthor,
+    coAuthor: obj.coAuthor,
+    statisticianAvailable: obj.statistician,
+    furtherTraining: obj.training,
+    doctoralContract: obj.contract,
+    remuneration: obj.remuneration,
+    workingMethod: obj.workMode,
+    regularMeetings: obj.meetings,
+    finalGrade: obj.finalGrade || obj.dissertationGrade,
+
+    // Ratings
+    carsRating: obj.care,
+    communicationRating: obj.communication,
+    teamRating: obj.workingGroup,
+    planningRating: obj.structurePlanning,
+    scopeRating: obj.scopeOfWork,
+    satisfactionRating: obj.overallGrade,
+    overallGrade: obj.overallGrade,
+
+    // Comments
+    carsComment: obj.care,
+    researchTopicComment: obj.researchTopic,
+    workingGroupComment: obj.workingGroup,
+    recommendations: obj.recommendations,
+    improvements: obj.improvement,
+  };
 }
 
 const Section = ({ title, data }) => (

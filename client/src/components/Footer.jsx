@@ -42,9 +42,9 @@ const Footer = () => {
           <h3 className="text-lg font-semibold mb-4">Contact</h3>
           <ul className="space-y-2">
             <li>
-              <a href="/contact" className="hover:text-blue-400 transition">
+              <Link to="/contact" className="hover:text-blue-400 transition">
                 Contact Form
-              </a>
+              </Link>
             </li>
           
           </ul>

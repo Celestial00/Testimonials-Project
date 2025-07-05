@@ -1,91 +1,51 @@
-import React, { useState } from "react";
-import Cookies from "js-cookie";
+import React from "react";
 
 const Login = () => {
-  const [form, setForm] = useState({ email: "", password: "" });
-
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const handle = form.email;
-    const password = form.password;
-
-    const res = await fetch("http://localhost:3300/api/auth/admin", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        handle,
-        password,
-      }),
-    });
-
-    if (res.status === 200) {
-      alert("nice");
-      let Data = await res.json();
-
-      Cookies.set('token', Data.token, {expires:'1'} )
-
-    }
-
-    if (res.status === 401) {
-      alert("User Not Found!");
-    }
-  };
-
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#121212] font-poppins px-4">
-      <div className="w-full max-w-md bg-[#1f1f1f] p-8 rounded-xl shadow-lg">
-        <h2 className="text-3xl font-bold text-white mb-6 text-center">
+    <section className="min-h-screen flex items-center bg-gradient-to-br from-white to-blue-200 text-gray-800 px-6 py-16">
+      <div className="max-w-md mx-auto w-full bg-white shadow-md rounded-lg p-8">
+        <h1 className="text-4xl font-bold mb-8 text-center text-blue-600">
           Login
-        </h2>
+        </h1>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form className="space-y-6">
           <div>
-            <label className="block text-white mb-1">Email</label>
+            <label htmlFor="email" className="block mb-2 font-medium">
+              Email
+            </label>
             <input
-              type="text"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              className="w-full px-4 py-2 rounded-md bg-[#2a2a2a] text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              type="email"
+              id="email"
+              placeholder="you@example.com"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
               required
             />
           </div>
 
           <div>
-            <label className="block text-white mb-1">Password</label>
+            <label htmlFor="password" className="block mb-2 font-medium">
+              Password
+            </label>
             <input
               type="password"
-              name="password"
-              value={form.password}
-              onChange={handleChange}
-              className="w-full px-4 py-2 rounded-md bg-[#2a2a2a] text-white focus:outline-none focus:ring-2 focus:ring-pink-500"
+              id="password"
+              placeholder="••••••••"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
               required
             />
           </div>
 
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-indigo-500 to-pink-500 text-white font-semibold py-2 rounded-md hover:opacity-90 transition cursor-pointer"
+            className="w-full bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300"
           >
-            Sign In
+            Login
           </button>
         </form>
 
-        <p className="text-sm text-gray-400 mt-6 text-center">
-          Don't have an account?{" "}
-          <span className="text-indigo-400 cursor-pointer hover:underline">
-            Contact Admin
-          </span>
-        </p>
+        
       </div>
-    </div>
+    </section>
   );
 };
 
