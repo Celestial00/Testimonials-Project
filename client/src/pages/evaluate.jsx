@@ -3,13 +3,58 @@ import SlideOne from "../components/Slide1";
 import SlideTwo from "../components/Slide2";
 import SlideThree from "../components/Slide3";
 import SlideFour from "../components/Slide4";
+import SlideThankYou from "../components/SlideThankYou";
+import { useSlideContext } from "../context/SlideContext";
 
 export default function EvaluationForm() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 4;
+  const {
+    validateSlide1Ref,
+    validateSlide2Ref,
+    validateSlide3Ref,
+    validateSlide4Ref,
+    AllData,
+  } = useSlideContext();
+  const totalSlides = 5;
+
+  console.log(AllData);
 
   const goNext = () => {
-    if (currentSlide < totalSlides - 1) setCurrentSlide(currentSlide + 1);
+    if (currentSlide === 0 && validateSlide1Ref.current) {
+      let isValid = validateSlide1Ref.current();
+      if (!isValid) {
+        console.log("Form not filled correctly");
+        return;
+      }
+    }
+
+    if (currentSlide === 1 && validateSlide2Ref.current) {
+      let isValid = validateSlide2Ref.current();
+      if (!isValid) {
+        console.log("Form not filled correctly");
+        return;
+      }
+    }
+
+    if (currentSlide === 2 && validateSlide3Ref.current) {
+      let isValid = validateSlide3Ref.current();
+      if (!isValid) {
+        console.log("Form not filled correctly");
+        return;
+      }
+    }
+
+    if (currentSlide === 3 && validateSlide4Ref.current) {
+      let isValid = validateSlide4Ref.current();
+      if (!isValid) {
+        console.log("Form not filled correctly");
+        return;
+      }
+    }
+
+    if (currentSlide < totalSlides - 1) {
+      setCurrentSlide(currentSlide + 1);
+    }
   };
 
   const goBack = () => {
@@ -34,7 +79,7 @@ export default function EvaluationForm() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-white to-blue-200 p-6">
-      <div className="w-full max-w-4xl flex flex-col items-center justify-center">
+      <div className="w-full max-w-4xl flex flex-col items-center justify-center ">
         <div className="w-full mb-4">
           <h2 className="text-5xl text-blue-700 mb-2 text-left">
             {titles[currentSlide]}
@@ -55,7 +100,7 @@ export default function EvaluationForm() {
                   : "text-gray-500"
               }`}
             >
-              Step {index + 1}
+              {index === 4 ? "Final" : `Step${index + 1}`}
             </span>
           ))}
         </div>
@@ -74,33 +119,35 @@ export default function EvaluationForm() {
           {currentSlide === 1 && <SlideTwo />}
           {currentSlide === 2 && <SlideThree />}
           {currentSlide === 3 && <SlideFour />}
+          {currentSlide === 4 && <SlideThankYou />}
         </div>
 
         {/* Navigation Buttons */}
-        <div className="flex justify-between w-full">
-          <button
-            onClick={goBack}
-            disabled={currentSlide === 0}
-            className={`px-6 py-3 rounded-md text-white transition ${
-              currentSlide === 0
-                ? "bg-blue-300 cursor-not-allowed"
-                : "bg-blue-600 hover:bg-blue-700"
-            }`}
-          >
-            Back
-          </button>
-          <button
-            onClick={goNext}
-            disabled={currentSlide === totalSlides - 1}
-            className={`px-6 py-3 rounded-md text-white transition ${
-              currentSlide === totalSlides - 1
-                ? "bg-blue-300 cursor-not-allowed"
-                : "bg-blue-600 hover:bg-blue-700"
-            }`}
-          >
-            Next
-          </button>
-        </div>
+
+        {currentSlide === 4 ? (
+          " "
+        ) : (
+          <div className="flex justify-between w-full">
+            <button
+              onClick={goBack}
+              disabled={currentSlide === 0}
+              className={`px-6 py-3 rounded-md text-white transition ${
+                currentSlide === 0
+                  ? "bg-blue-300 cursor-not-allowed"
+                  : "bg-blue-600 hover:bg-blue-700"
+              }`}
+            >
+              Back
+            </button>
+            <button
+              onClick={goNext}
+              disabled={currentSlide === totalSlides - 1}
+              className={`px-6 py-3 rounded-md text-white transition ${"bg-blue-600 hover:bg-blue-700"}`}
+            >
+              {currentSlide === totalSlides - 2 ? "Finish" : "Next"}
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

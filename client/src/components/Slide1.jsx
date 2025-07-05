@@ -1,8 +1,97 @@
-import { useState } from "react";
-// import MockData from "../MockData/MockData.json";
+import { useEffect, useState } from "react";
+import MockData from "../MockData/MockData.json";
+import { useSlideContext } from "../context/SlideContext";
 
-// SlideOne.js
-export default function SlideOne() {
+export default function SlideOne({ Validate }) {
+  const { countries } = MockData;
+  const { validateSlide1Ref, getDataSlide1, AllData } = useSlideContext();
+  const Slide1Data = AllData[0];
+  const [selectedCountry, setSelectedCountry] = useState(
+    Slide1Data !== null ? Slide1Data.selectedCountry : ""
+  );
+  const [selectedCity, setSelectedCity] = useState(
+    Slide1Data !== null ? Slide1Data.selectedCity : ""
+  );
+  const [selectedUniversity, setSelectedUniversity] = useState(
+    Slide1Data !== null ? Slide1Data.selectedUniversity : ""
+  );
+  const [workingGroup, setWorkingGroup] = useState(
+    Slide1Data !== null ? Slide1Data.workingGroup : ""
+  );
+  const [department, setDepartment] = useState(
+    Slide1Data !== null ? Slide1Data.department : ""
+  );
+  const [speciality, setSpeciality] = useState(
+    Slide1Data !== null ? Slide1Data.speciality : ""
+  );
+
+  const [errors, setErrors] = useState({});
+
+  const handleCountryChange = (e) => {
+    setSelectedCountry(e.target.value);
+    setSelectedCity("");
+    setSelectedUniversity("");
+  };
+
+  const handleCityChange = (e) => {
+    setSelectedCity(e.target.value);
+    setSelectedUniversity("");
+  };
+
+  const handleUniversityChange = (e) => {
+    setSelectedUniversity(e.target.value);
+  };
+
+  const selectedCountryData = countries.find((c) => c.name === selectedCountry);
+  const selectedCityData = selectedCountryData?.cities.find(
+    (c) => c.name === selectedCity
+  );
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!selectedCountry) newErrors.selectedCountry = "Country is required.";
+    if (!selectedCity) newErrors.selectedCity = "City is required.";
+    if (!selectedUniversity)
+      newErrors.selectedUniversity = "Institution is required.";
+    if (!workingGroup.trim())
+      newErrors.workingGroup = "Working group is required.";
+    if (!department) newErrors.department = "Department is required.";
+    if (!speciality) newErrors.speciality = "Speciality is required.";
+
+    setErrors(newErrors);
+
+    const Data = {
+      selectedCountry,
+      selectedCity,
+      selectedUniversity,
+      workingGroup,
+      department,
+      speciality,
+    };
+
+    if (Object.keys(newErrors).length === 0) {
+      getDataSlide1(Data);
+      console.log(AllData);
+      return true;
+    }
+  };
+
+  useEffect(() => {
+    validateSlide1Ref.current = validateForm;
+  }, [
+    selectedCountry,
+    selectedCity,
+    selectedUniversity,
+    workingGroup,
+    department,
+    speciality,
+  ]);
+
+  const inputClass = (hasError) =>
+    `w-full p-3 rounded-[10px] border ${
+      hasError ? "border-red-500" : "border-gray-300"
+    }`;
+
   return (
     <div className="w-full">
       {/* Row 1: Country and City */}
@@ -12,31 +101,46 @@ export default function SlideOne() {
             Country
           </label>
           <select
-            className="w-full p-3 rounded-[10px] border border-gray-300"
-            defaultValue=""
+            className={inputClass(errors.selectedCountry)}
+            value={selectedCountry}
+            onChange={handleCountryChange}
           >
             <option value="" disabled>
               Select Country
             </option>
-            <option>USA</option>
-            <option>Canada</option>
-            <option>UK</option>
+            {countries.map((country, index) => (
+              <option key={index} value={country.name}>
+                {country.name}
+              </option>
+            ))}
           </select>
+          {errors.selectedCountry && (
+            <p className="text-red-500 text-sm mt-1">
+              {errors.selectedCountry}
+            </p>
+          )}
         </div>
 
         <div className="flex-1">
           <label className="block mb-1 font-medium text-gray-700">City</label>
           <select
-            className="w-full p-3 rounded-[10px] border border-gray-300"
-            defaultValue=""
+            className={inputClass(errors.selectedCity)}
+            value={selectedCity}
+            onChange={handleCityChange}
+            disabled={!selectedCountry}
           >
             <option value="" disabled>
               Select City
             </option>
-            <option>New York</option>
-            <option>Toronto</option>
-            <option>London</option>
+            {selectedCountryData?.cities.map((city, index) => (
+              <option key={index} value={city.name}>
+                {city.name}
+              </option>
+            ))}
           </select>
+          {errors.selectedCity && (
+            <p className="text-red-500 text-sm mt-1">{errors.selectedCity}</p>
+          )}
         </div>
       </div>
 
@@ -46,16 +150,25 @@ export default function SlideOne() {
           Institution
         </label>
         <select
-          className="w-full p-3 rounded-[10px] border border-gray-300"
-          defaultValue=""
+          className={inputClass(errors.selectedUniversity)}
+          value={selectedUniversity}
+          onChange={handleUniversityChange}
+          disabled={!selectedCity}
         >
           <option value="" disabled>
             Select Institution
           </option>
-          <option>Harvard</option>
-          <option>MIT</option>
-          <option>Oxford</option>
+          {selectedCityData?.universities.map((uni, index) => (
+            <option key={index} value={uni.name}>
+              {uni.name}
+            </option>
+          ))}
         </select>
+        {errors.selectedUniversity && (
+          <p className="text-red-500 text-sm mt-1">
+            {errors.selectedUniversity}
+          </p>
+        )}
       </div>
 
       {/* Row 3: Working Group */}
@@ -66,19 +179,25 @@ export default function SlideOne() {
         <input
           type="text"
           placeholder="Enter working group"
-          className="w-full p-3 rounded-[10px] border border-gray-300"
+          className={inputClass(errors.workingGroup)}
+          value={workingGroup}
+          onChange={(e) => setWorkingGroup(e.target.value)}
         />
+        {errors.workingGroup && (
+          <p className="text-red-500 text-sm mt-1">{errors.workingGroup}</p>
+        )}
       </div>
 
       {/* Row 4: Department and Speciality */}
-      <div className="flex gap-4">
+      <div className="flex gap-4 mb-6">
         <div className="flex-1">
           <label className="block mb-1 font-medium text-gray-700">
             Department
           </label>
           <select
-            className="w-full p-3 rounded-[10px] border border-gray-300"
-            defaultValue=""
+            className={inputClass(errors.department)}
+            value={department}
+            onChange={(e) => setDepartment(e.target.value)}
           >
             <option value="" disabled>
               Select Department
@@ -86,6 +205,9 @@ export default function SlideOne() {
             <option>Computer Science</option>
             <option>Engineering</option>
           </select>
+          {errors.department && (
+            <p className="text-red-500 text-sm mt-1">{errors.department}</p>
+          )}
         </div>
 
         <div className="flex-1">
@@ -93,8 +215,9 @@ export default function SlideOne() {
             Speciality
           </label>
           <select
-            className="w-full p-3 rounded-[10px] border border-gray-300"
-            defaultValue=""
+            className={inputClass(errors.speciality)}
+            value={speciality}
+            onChange={(e) => setSpeciality(e.target.value)}
           >
             <option value="" disabled>
               Select Speciality
@@ -102,8 +225,13 @@ export default function SlideOne() {
             <option>Machine Learning</option>
             <option>Data Science</option>
           </select>
+          {errors.speciality && (
+            <p className="text-red-500 text-sm mt-1">{errors.speciality}</p>
+          )}
         </div>
       </div>
+
+      {/* Validation Button */}
     </div>
   );
 }

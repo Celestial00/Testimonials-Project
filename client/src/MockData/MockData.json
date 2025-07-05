@@ -1,0 +1,1046 @@
+{
+  "countries": [
+    {
+      "name": "Germany",
+      "cities": [
+        {
+          "name": "Chemnitz",
+          "universities": [
+            {
+              "name": "Technische Universität Chemnitz",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Hohenheim",
+          "universities": [
+            {
+              "name": "Universität Hohenheim",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Bremen",
+          "universities": [
+            {
+              "name": "Hochschule Bremen",
+              "courses": []
+            },
+            {
+              "name": "Universität Bremen",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Hannover",
+          "universities": [
+            {
+              "name": "Hochschule Hannover",
+              "courses": []
+            },
+            {
+              "name": "Gottfried Wilhelm Leibniz Universität Hannover",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Deggendorf",
+          "universities": [
+            {
+              "name": "Technische Hochschule Deggendorf",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Fulda",
+          "universities": [
+            {
+              "name": "Hochschule Fulda",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Koblenz",
+          "universities": [
+            {
+              "name": "Hochschule Koblenz",
+              "courses": []
+            },
+            {
+              "name": "Uni Koblenz",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Sankt Augustin",
+          "universities": [
+            {
+              "name": "Hochschule Bonn-Rhein-Sieg",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Lüneburg",
+          "universities": [
+            {
+              "name": "Leuphana Universität Lüneburg",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Schweinfurt",
+          "universities": [
+            {
+              "name": "Technische Hochschule Würzburg-Schweinfurt",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Ulm",
+          "universities": [
+            {
+              "name": "Universität Ulm",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Hamburg",
+          "universities": [
+            {
+              "name": "Europäische Fernhochschule Hamburg",
+              "courses": []
+            },
+            {
+              "name": "Hamburger Fern-Hochschule, gemeinnützige GmbH",
+              "courses": []
+            },
+            {
+              "name": "Hochschule für Angewandte Wissenschaften Hamburg",
+              "courses": []
+            },
+            {
+              "name": "Universität Hamburg",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Wolfenbüttel",
+          "universities": [
+            {
+              "name": "Ostfalia Hochschule für angewandte Wissenschaften",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Bielefeld",
+          "universities": [
+            {
+              "name": "Hochschule Bielefeld",
+              "courses": []
+            },
+            {
+              "name": "Universität Bielefeld",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Greifswald",
+          "universities": [
+            {
+              "name": "Universität Greifswald",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Konstanz",
+          "universities": [
+            {
+              "name": "Universität Konstanz",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Trier",
+          "universities": [
+            {
+              "name": "Universität Trier",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Iserlohn",
+          "universities": [
+            {
+              "name": "Fachhochschule Südwestfalen",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Regensburg",
+          "universities": [
+            {
+              "name": "Ostbayerische Technische Hochschule Regensburg",
+              "courses": []
+            },
+            {
+              "name": "Universität Regensburg",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Bamberg",
+          "universities": [
+            {
+              "name": "Otto-Friedrich-Universität Bamberg",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Düsseldorf",
+          "universities": [
+            {
+              "name": "Hochschule Düsseldorf",
+              "courses": []
+            },
+            {
+              "name": "Heinrich-Heine-Universität Düsseldorf",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Passau",
+          "universities": [
+            {
+              "name": "Universität Passau",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Mannheim",
+          "universities": [
+            {
+              "name": "Universität Mannheim",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Bayreuth",
+          "universities": [
+            {
+              "name": "Universität Bayreuth",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Berlin",
+          "universities": [
+            {
+              "name": "Berliner Hochschule für Technik",
+              "courses": []
+            },
+            {
+              "name": "Hochschule für Wirtschaft und Recht Berlin",
+              "courses": []
+            },
+            {
+              "name": "Hochschule für Technik und Wirtschaft Berlin",
+              "courses": []
+            },
+            {
+              "name": "Technische Universität Berlin",
+              "courses": []
+            },
+            {
+              "name": "Humboldt-Universität zu Berlin",
+              "courses": []
+            },
+            {
+              "name": "Freie Universität Berlin",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Wiesbaden",
+          "universities": [
+            {
+              "name": "Hochschule RheinMain",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Nürnberg",
+          "universities": [
+            {
+              "name": "Technische Hochschule Nürnberg Georg Simon Ohm",
+              "courses": []
+            },
+            {
+              "name": "Friedrich-Alexander-Universität Erlangen-Nürnberg",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Magdeburg",
+          "universities": [
+            {
+              "name": "Otto-von-Guericke-Universität Magdeburg",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Rostock",
+          "universities": [
+            {
+              "name": "Universität Rostock",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Niederrhein",
+          "universities": [
+            {
+              "name": "Hochschule Niederrhein",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Osnabrück",
+          "universities": [
+            {
+              "name": "Hochschule Osnabrück",
+              "courses": []
+            },
+            {
+              "name": "Universität Osnabrück",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Aachen",
+          "universities": [
+            {
+              "name": "FH Aachen",
+              "courses": []
+            },
+            {
+              "name": "Rheinisch-Westfälische Technische Hochschule Aachen",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Dortmund",
+          "universities": [
+            {
+              "name": "Fachhochschule Dortmund",
+              "courses": []
+            },
+            {
+              "name": "Technische Universität Dortmund",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Darmstadt",
+          "universities": [
+            {
+              "name": "Hochschule Darmstadt",
+              "courses": []
+            },
+            {
+              "name": "Technische Universität Darmstadt",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Oldenburg",
+          "universities": [
+            {
+              "name": "Carl von Ossietzky Universität Oldenburg",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Frankfurt",
+          "universities": [
+            {
+              "name": "Frankfurt University of Applied Sciences",
+              "courses": []
+            },
+            {
+              "name": "Johann Wolfgang Goethe-Universität Frankfurt am Main",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Siegen",
+          "universities": [
+            {
+              "name": "Universität Siegen",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Gießen",
+          "universities": [
+            {
+              "name": "Technische Hochschule Mittelhessen (THM)",
+              "courses": []
+            },
+            {
+              "name": "Justus-Liebig-Universität Gießen",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Saarlandes",
+          "universities": [
+            {
+              "name": "Universität des Saarlandes",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Braunschweig",
+          "universities": [
+            {
+              "name": "Technische Universität Carolo-Wilhelmina zu Braunschweig",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Jena",
+          "universities": [
+            {
+              "name": "Friedrich-Schiller-Universität Jena",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Paderborn",
+          "universities": [
+            {
+              "name": "Universität Paderborn",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "München",
+          "universities": [
+            {
+              "name": "HM Hochschule München",
+              "courses": []
+            },
+            {
+              "name": "Ludwig-Maximilians-Universität München",
+              "courses": []
+            },
+            {
+              "name": "Technische Universität München",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Kaiserslautern",
+          "universities": [
+            {
+              "name": "RPTU Kaiserslautern-Landau",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Augsburg",
+          "universities": [
+            {
+              "name": "Universität Augsburg",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Wittenberg",
+          "universities": [
+            {
+              "name": "Martin-Luther-Universität Halle-Wittenberg",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Potsdam",
+          "universities": [
+            {
+              "name": "Universität Potsdam",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Kassel",
+          "universities": [
+            {
+              "name": "Universität Kassel",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Stuttgart",
+          "universities": [
+            {
+              "name": "Universität Stuttgart",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Marburg",
+          "universities": [
+            {
+              "name": "Philipps-Universität Marburg",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Wuppertal",
+          "universities": [
+            {
+              "name": "Bergische Universität Wuppertal",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Köln",
+          "universities": [
+            {
+              "name": "Technische Hochschule Köln",
+              "courses": []
+            },
+            {
+              "name": "Universität zu Köln",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Karlsruhe",
+          "universities": [
+            {
+              "name": "Karlsruher Institut für Technologie (KIT)",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Freiburg",
+          "universities": [
+            {
+              "name": "Universität Freiburg",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Kiel",
+          "universities": [
+            {
+              "name": "Christian-Albrechts-Universität zu Kiel",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Würzburg",
+          "universities": [
+            {
+              "name": "Julius-Maximilians-Universität Würzburg",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Göttingen",
+          "universities": [
+            {
+              "name": "Georg-August-Universität Göttingen",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Dresden",
+          "universities": [
+            {
+              "name": "Technische Universität Dresden",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Tübingen",
+          "universities": [
+            {
+              "name": "Eberhard Karls Universität Tübingen",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Heidelberg",
+          "universities": [
+            {
+              "name": "Ruprecht-Karls-Universität Heidelberg",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Mainz",
+          "universities": [
+            {
+              "name": "Johannes Gutenberg-Universität Mainz",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Leipzig",
+          "universities": [
+            {
+              "name": "Universität Leipzig",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Württemberg",
+          "universities": [
+            {
+              "name": "Duale Hochschule Baden-Württemberg",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Bonn",
+          "universities": [
+            {
+              "name": "Rheinische Friedrich-Wilhelms-Universität Bonn",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Essen",
+          "universities": [
+            {
+              "name": "Universität Duisburg-Essen",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Bochum",
+          "universities": [
+            {
+              "name": "Ruhr-Universität Bochum",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Münster",
+          "universities": [
+            {
+              "name": "Fachhochschule Münster University of Applied Sciences",
+              "courses": []
+            },
+            {
+              "name": "Universität Münster",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Hagen",
+          "universities": [
+            {
+              "name": "FernUniversität in Hagen",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Hochschule",
+          "universities": [
+            {
+              "name": "IU Internationale Hochschule",
+              "courses": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Austria",
+      "cities": [
+        {
+          "name": "Wien",
+          "universities": [
+            {
+              "name": "Universität Wien",
+              "courses": []
+            },
+            {
+              "name": "Medizinische Universität Wien",
+              "courses": []
+            },
+            {
+              "name": "Technische Universität Wien",
+              "courses": []
+            },
+            {
+              "name": "Universität für Bodenkultur Wien",
+              "courses": []
+            },
+            {
+              "name": "Veterinärmedizinische Universität Wien",
+              "courses": []
+            },
+            {
+              "name": "Wirtschaftsuniversität Wien",
+              "courses": []
+            },
+            {
+              "name": "Universität für angewandte Kunst Wien",
+              "courses": []
+            },
+            {
+              "name": "Universität für Musik und darstellende Kunst Wien",
+              "courses": []
+            },
+            {
+              "name": "Akademie der bildenden Künste Wien",
+              "courses": []
+            },
+            {
+              "name": "JAM MUSIC LAB Private University for Jazz and Popular Music Vienna",
+              "courses": []
+            },
+            {
+              "name": "MODUL University Private University Vienna",
+              "courses": []
+            },
+            {
+              "name": "Musik und Kunst Privatuniversität der Stadt Wien",
+              "courses": []
+            },
+            {
+              "name": "Sigmund Freud Privatuniversität",
+              "courses": []
+            },
+            {
+              "name": "Webster Vienna Private University",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Graz",
+          "universities": [
+            {
+              "name": "Karl-Franzens-Universität Graz",
+              "courses": []
+            },
+            {
+              "name": "Medizinische Universität Graz",
+              "courses": []
+            },
+            {
+              "name": "Technische Universität Graz",
+              "courses": []
+            },
+            {
+              "name": "Universität für Musik und darstellende Kunst Graz",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Innsbruck",
+          "universities": [
+            {
+              "name": "Universität Innsbruck",
+              "courses": []
+            },
+            {
+              "name": "Medizinische Universität Innsbruck",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Salzburg",
+          "universities": [
+            {
+              "name": "Paris-Lodron-Universität Salzburg",
+              "courses": []
+            },
+            {
+              "name": "Universität Mozarteum Salzburg",
+              "courses": []
+            },
+            {
+              "name": "Paracelsus Medizinische Privatuniversität",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Klosberneuburg",
+          "universities": [
+            {
+              "name": "Institute of Science and Technology Austria",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Leoben",
+          "universities": [
+            {
+              "name": "Montanuniversität Leoben",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Linz",
+          "universities": [
+            {
+              "name": "Johannes Kepler Universität Linz",
+              "courses": []
+            },
+            {
+              "name": "Universität für künstlerische und industrielle Gestaltung Linz",
+              "courses": []
+            },
+            {
+              "name": "Anton Bruckner Privatuniversität",
+              "courses": []
+            },
+            {
+              "name": "Katholische Privatuniversität Linz",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Klagenfurt",
+          "universities": [
+            {
+              "name": "Alpen-Adria-Universität Klagenfurt",
+              "courses": []
+            },
+            {
+              "name": "Gustav Mahler Privatuniversität für Musik",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Krems",
+          "universities": [
+            {
+              "name": "Universität für Weiterbildung Krems (Donau-Universität Krems)",
+              "courses": []
+            },
+            {
+              "name": "Karl Landsteiner Privatuniversität für Gesundheitswissenschaften",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "St. Pölten",
+          "universities": [
+            {
+              "name": "Bertha von Suttner Privatuniversität",
+              "courses": []
+            },
+            {
+              "name": "New Design University Privatuniversität St.Pölten",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Hall in Tirol",
+          "universities": [
+            {
+              "name": "UMIT TIROL – Privatuniversität für Gesundheitswissenschaften und -technologie",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Seekirchen",
+          "universities": [
+            {
+              "name": "Privatuniversität Schloss Seeburg",
+              "courses": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Switzerland",
+      "cities": [
+        {
+          "name": "Lausanne",
+          "universities": [
+            {
+              "name": "Ecole polytechnique fédérale de Lausanne EPFL",
+              "courses": []
+            },
+            {
+              "name": "Université de Lausanne UNIL",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Zürich",
+          "universities": [
+            {
+              "name": "Eidgenössische Technische Hochschule Zürich ETH",
+              "courses": []
+            },
+            {
+              "name": "Universität Zürich UZH",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Basel",
+          "universities": [
+            {
+              "name": "Universität Basel",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Bern",
+          "universities": [
+            {
+              "name": "Universität Bern UniBE",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Fribourg",
+          "universities": [
+            {
+              "name": "Université de Fribourg Unifr",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Genève",
+          "universities": [
+            {
+              "name": "Université de Genève UNIGE",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Luzern",
+          "universities": [
+            {
+              "name": "Universität Luzern Unilu",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Neuenburg",
+          "universities": [
+            {
+              "name": "Universität Neuenburg UniNE",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "St. Gallen",
+          "universities": [
+            {
+              "name": "Universität St. Gallen HSG",
+              "courses": []
+            }
+          ]
+        },
+        {
+          "name": "Lugano",
+          "universities": [
+            {
+              "name": "Università della Svizzera italiana USI",
+              "courses": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

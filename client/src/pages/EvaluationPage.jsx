@@ -1,19 +1,26 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
 
 export default function EvaluationPage() {
   const location = useLocation();
   const navigate = useNavigate();
-  const review = location.state?.review;
 
-  useEffect(() => {
-    if (!review) {
-      // Optional: redirect back if no data is found
-      navigate("/"); // or show an error
-    }
-  }, [review, navigate]);
+  // Accept data from any known keys
+  const {
+    review,
+    feedback,
+    evaluation,
+    formData,
+    data,
+  } = location.state || {};
 
-  if (!review) return <p className="text-center mt-10 text-gray-600">No review data available.</p>;
+  const finalData = review || feedback || evaluation || formData || data;
+
+  if (!finalData)
+    return (
+      <p className="text-center mt-10 text-gray-600">
+        No evaluation data available.
+      </p>
+    );
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-white to-blue-100 px-4 py-12">
@@ -29,51 +36,51 @@ export default function EvaluationPage() {
         </div>
 
         <Section title="1. Dissertation project" data={[
-          { label: "Country", value: review.country },
-          { label: "City", value: review.city || "-" },
-          { label: "University", value: review.university },
-          { label: "Specialization", value: review.specialization || review.specification },
-          { label: "Working group / Chair", value: review.workingGroup || "-" },
+          { label: "Country", value: finalData.country },
+          { label: "City", value: finalData.city || "-" },
+          { label: "University", value: finalData.university },
+          { label: "Specialization", value: finalData.specialization || finalData.specification },
+          { label: "Working group / Chair", value: finalData.workingGroup || "-" },
         ]} />
 
         <Section title="2. Details" data={[
-          { label: "Title", value: review.title },
-          { label: "Status", value: review.status },
-          { label: "Degree", value: review.degree },
-          { label: "Project start", value: review.projectStart },
-          { label: "Project end", value: review.projectEnd || "-" },
-          { label: "Research method", value: review.researchMethod },
-          { label: "Compulsory sabbatical", value: review.compulsorySabbatical || "No" },
-          { label: "Form", value: review.form },
-          { label: "Publications", value: review.publications || "No" },
-          { label: "First author", value: review.firstAuthor || "No" },
-          { label: "Co-author", value: review.coAuthor || "No" },
-          { label: "Statistician available", value: review.statisticianAvailable || "No" },
-          { label: "Further training", value: review.furtherTraining || "No" },
-          { label: "Doctoral contract", value: review.doctoralContract || "No" },
-          { label: "Remuneration", value: review.remuneration || "No" },
-          { label: "Working method", value: review.workingMethod },
-          { label: "Regular meetings and support", value: review.regularMeetings || "No" },
-          { label: "Final grade", value: review.finalGrade || "-" },
+          { label: "Title", value: finalData.title },
+          { label: "Status", value: finalData.status },
+          { label: "Degree", value: finalData.degree },
+          { label: "Project start", value: finalData.projectStart },
+          { label: "Project end", value: finalData.projectEnd || "-" },
+          { label: "Research method", value: finalData.researchMethod },
+          { label: "Compulsory sabbatical", value: finalData.compulsorySabbatical || "No" },
+          { label: "Form", value: finalData.form },
+          { label: "Publications", value: finalData.publications || "No" },
+          { label: "First author", value: finalData.firstAuthor || "No" },
+          { label: "Co-author", value: finalData.coAuthor || "No" },
+          { label: "Statistician available", value: finalData.statisticianAvailable || "No" },
+          { label: "Further training", value: finalData.furtherTraining || "No" },
+          { label: "Doctoral contract", value: finalData.doctoralContract || "No" },
+          { label: "Remuneration", value: finalData.remuneration || "No" },
+          { label: "Working method", value: finalData.workingMethod },
+          { label: "Regular meetings and support", value: finalData.regularMeetings || "No" },
+          { label: "Final grade", value: finalData.finalGrade || "-" },
         ]} />
 
         <Section title="3. Ratings" data={[
-          { label: "Cars", value: review.carsRating || "-" },
-          { label: "Communication / Availability", value: review.communicationRating || "-" },
-          { label: "Working group / team", value: review.teamRating || "-" },
-          { label: "Structure / Planning / Implementation", value: review.planningRating || "-" },
-          { label: "Scope of work", value: review.scopeRating || "-" },
-          { label: "Satisfaction", value: review.satisfactionRating || "-" },
-          { label: "Overall grade", value: review.overallGrade || "-" },
+          { label: "Cars", value: finalData.carsRating || "-" },
+          { label: "Communication / Availability", value: finalData.communicationRating || "-" },
+          { label: "Working group / team", value: finalData.teamRating || "-" },
+          { label: "Structure / Planning / Implementation", value: finalData.planningRating || "-" },
+          { label: "Scope of work", value: finalData.scopeRating || "-" },
+          { label: "Satisfaction", value: finalData.satisfactionRating || "-" },
+          { label: "Overall grade", value: finalData.overallGrade || "-" },
         ]} />
 
         <div className="mt-10">
           <h3 className="text-xl font-semibold text-gray-800 mb-4">4. Comments</h3>
-          <Comment title="Cars" value={review.carsComment} />
-          <Comment title="Research topic" value={review.researchTopicComment} />
-          <Comment title="Working group / Chair" value={review.workingGroupComment} />
-          <Comment title="Recommendations / Tips" value={review.recommendations} />
-          <Comment title="Improvement requests / suggestions" value={review.improvements} />
+          <Comment title="Cars" value={finalData.carsComment} />
+          <Comment title="Research topic" value={finalData.researchTopicComment} />
+          <Comment title="Working group / Chair" value={finalData.workingGroupComment} />
+          <Comment title="Recommendations / Tips" value={finalData.recommendations} />
+          <Comment title="Improvement requests / suggestions" value={finalData.improvements} />
         </div>
       </div>
     </div>
