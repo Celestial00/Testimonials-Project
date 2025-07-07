@@ -1,6 +1,46 @@
-import React from "react";
+import { useEffect, useState } from "react";
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const nav = useNavigate();
+
+  useEffect(() => {
+    if (Cookies.get("token") !== undefined) {
+      nav("/dashboard");
+    }
+  }, []);
+
+  const HandleLogin = async (e) => {
+    e.preventDefault();
+
+    const res = await fetch("http://localhost:3300/api/auth/admin", {
+      method: "POST",
+      headers: {
+        "Content-Type": "Application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    const results = await res.json();
+    Cookies.set("token", results.token);
+
+    nav("/dashboard");
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
   return (
     <section className="min-h-screen flex items-center bg-gradient-to-br from-white to-blue-200 text-gray-800 px-6 py-16">
       <div className="max-w-md mx-auto w-full bg-white shadow-md rounded-lg p-8">
@@ -16,6 +56,8 @@ const Login = () => {
             <input
               type="email"
               id="email"
+              name="email"
+              onChange={handleChange}
               placeholder="you@example.com"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
               required
@@ -29,6 +71,8 @@ const Login = () => {
             <input
               type="password"
               id="password"
+              name="password"
+              onChange={handleChange}
               placeholder="••••••••"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
               required
@@ -36,14 +80,12 @@ const Login = () => {
           </div>
 
           <button
-            type="submit"
+            onClick={HandleLogin}
             className="w-full bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300"
           >
             Login
           </button>
         </form>
-
-        
       </div>
     </section>
   );

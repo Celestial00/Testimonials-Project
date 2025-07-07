@@ -15,6 +15,7 @@ import RankingPage from "./pages/Ranking";
 import PrivacyPolicy from "./pages/PrivacyPage";
 import EvaluationPage from "./pages/EvaluationPage";
 import Contact from "./pages/Contact";
+import ThankYou from "./pages/ThankYouPage";
 
 function App() {
   return (
@@ -33,11 +34,11 @@ function App() {
             <Route path="/Policy" element={<PrivacyPolicy />} />
             <Route path="/Evaluation" element={<EvaluationPage />} />
             <Route path="/Contact" element={<Contact />} />
+            <Route path="/admin" element={<Login />} />
+            <Route path="/ThankYou" element={<ThankYou />} />
           </Route>
 
-          {/* Protected Routes */}
           <Route element={<ProtectedRoutes />}>
-            <Route path="/admin" element={<Login />} />
             <Route path="/dashboard" element={<Dashboard />} />
           </Route>
 

@@ -103,7 +103,7 @@ export default function SlideExact() {
           onChange={(e) => setCare(e.target.value)}
           className="w-full p-3 rounded-[10px] border border-gray-300 mt-1"
           placeholder="____________"
-          maxLength={12}
+    
         />
         {errors.care && <p className="text-red-500 text-sm">{errors.care}</p>}
       </label>
@@ -116,7 +116,7 @@ export default function SlideExact() {
           onChange={(e) => setResearchTopic(e.target.value)}
           className="w-full p-3 rounded-[10px] border border-gray-300 mt-1"
           placeholder="____________"
-          maxLength={12}
+       
         />
         {errors.researchTopic && (
           <p className="text-red-500 text-sm">{errors.researchTopic}</p>
@@ -131,7 +131,7 @@ export default function SlideExact() {
           onChange={(e) => setWorkingGroup(e.target.value)}
           className="w-full p-3 rounded-[10px] border border-gray-300 mt-1"
           placeholder="____________"
-          maxLength={12}
+          
         />
         {errors.workingGroup && (
           <p className="text-red-500 text-sm">{errors.workingGroup}</p>
@@ -146,7 +146,7 @@ export default function SlideExact() {
           onChange={(e) => setRecommendations(e.target.value)}
           className="w-full p-3 rounded-[10px] border border-gray-300 mt-1"
           placeholder="____________"
-          maxLength={12}
+  
         />
         {errors.recommendations && (
           <p className="text-red-500 text-sm">{errors.recommendations}</p>
@@ -161,7 +161,7 @@ export default function SlideExact() {
           onChange={(e) => setImprovement(e.target.value)}
           className="w-full p-3 rounded-[10px] border border-gray-300 mt-1"
           placeholder="____________"
-          maxLength={12}
+          
         />
         {errors.improvement && (
           <p className="text-red-500 text-sm">{errors.improvement}</p>
@@ -220,7 +220,7 @@ export default function SlideExact() {
             onChange={(e) => setName(e.target.value)}
             className="w-full p-3 rounded-[10px] border border-gray-300 mt-1"
             placeholder="____________"
-            maxLength={12}
+         
           />
           {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
         </label>
@@ -252,7 +252,7 @@ export default function SlideExact() {
           onChange={(e) => setEmail(e.target.value)}
           className="w-full p-3 rounded-[10px] border border-gray-300 mt-1 mb-4"
           placeholder="____________"
-          maxLength={12}
+        
         />
         {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
       </label>

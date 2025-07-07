@@ -8,7 +8,7 @@ const FilterSort = ({ filters, onFilterChange, onSortChange }) => {
           <label htmlFor="university" className="block text-sm font-medium text-gray-700 mb-1">University</label>
           <select
             id="university"
-            value={filters.university}
+            // value={filters.university}
             onChange={(e) => onFilterChange('university', e.target.value)}
             className="border border-gray-300 rounded-md px-3 py-2 w-full"
           >
@@ -26,7 +26,7 @@ const FilterSort = ({ filters, onFilterChange, onSortChange }) => {
           <label htmlFor="specialization" className="block text-sm font-medium text-gray-700 mb-1">Specialization</label>
           <select
             id="specialization"
-            value={filters.specialization}
+            // value={filters.specialization}
             onChange={(e) => onFilterChange('specialization', e.target.value)}
             className="border border-gray-300 rounded-md px-3 py-2 w-full"
           >
@@ -45,8 +45,8 @@ const FilterSort = ({ filters, onFilterChange, onSortChange }) => {
           <label htmlFor="country" className="block text-sm font-medium text-gray-700 mb-1">Country</label>
           <select
             id="country"
-            value={filters.country}
-            onChange={(e) => onFilterChange('country', e.target.value)}
+            // value={filters.country}
+            // onChange={(e) => onFilterChange('country', e.target.value)}
             className="border border-gray-300 rounded-md px-3 py-2 w-full"
           >
             <option value="">All</option>
@@ -63,8 +63,8 @@ const FilterSort = ({ filters, onFilterChange, onSortChange }) => {
               <input
                 type="radio"
                 name="sabbatical"
-                checked={filters.compulsorySabbatical === ""}
-                onChange={() => onFilterChange('compulsorySabbatical', "")}
+                // checked={filters.compulsorySabbatical === ""}
+                // onChange={() => onFilterChange('compulsorySabbatical', "")}
                 className="h-4 w-4 text-blue-600"
               />
               <span className="ml-2 text-gray-700">All</span>
@@ -73,8 +73,8 @@ const FilterSort = ({ filters, onFilterChange, onSortChange }) => {
               <input
                 type="radio"
                 name="sabbatical"
-                checked={filters.compulsorySabbatical === "Yes"}
-                onChange={() => onFilterChange('compulsorySabbatical', "Yes")}
+                // checked={filters.compulsorySabbatical === "Yes"}
+                // onChange={() => onFilterChange('compulsorySabbatical', "Yes")}
                 className="h-4 w-4 text-blue-600"
               />
               <span className="ml-2 text-gray-700">Yes</span>
@@ -90,8 +90,8 @@ const FilterSort = ({ filters, onFilterChange, onSortChange }) => {
               <input
                 type="radio"
                 name="form"
-                checked={filters.form === ""}
-                onChange={() => onFilterChange('form', "")}
+                // checked={filters.form === ""}
+                // onChange={() => onFilterChange('form', "")}
                 className="h-4 w-4 text-blue-600"
               />
               <span className="ml-2 text-gray-700">All</span>
@@ -100,8 +100,8 @@ const FilterSort = ({ filters, onFilterChange, onSortChange }) => {
               <input
                 type="radio"
                 name="form"
-                checked={filters.form === "Paper"}
-                onChange={() => onFilterChange('form', "Paper")}
+                // checked={filters.form === "Paper"}
+                // onChange={() => onFilterChange('form', "Paper")}
                 className="h-4 w-4 text-blue-600"
               />
               <span className="ml-2 text-gray-700">Paper</span>
@@ -117,8 +117,8 @@ const FilterSort = ({ filters, onFilterChange, onSortChange }) => {
               <input
                 type="radio"
                 name="method"
-                checked={filters.method === ""}
-                onChange={() => onFilterChange('method', "")}
+                // checked={filters.method === ""}
+                // onChange={() => onFilterChange('method', "")}
                 className="h-4 w-4 text-blue-600"
               />
               <span className="ml-2 text-gray-700">All</span>
@@ -127,8 +127,8 @@ const FilterSort = ({ filters, onFilterChange, onSortChange }) => {
               <input
                 type="radio"
                 name="method"
-                checked={filters.method === "Experimental"}
-                onChange={() => onFilterChange('method', "Experimental")}
+                // checked={filters.method === "Experimental"}
+                // onChange={() => onFilterChange('method', "Experimental")}
                 className="h-4 w-4 text-blue-600"
               />
               <span className="ml-2 text-gray-700">Experimental</span>
@@ -137,8 +137,8 @@ const FilterSort = ({ filters, onFilterChange, onSortChange }) => {
               <input
                 type="radio"
                 name="method"
-                checked={filters.method === "Clinical"}
-                onChange={() => onFilterChange('method', "Clinical")}
+                // checked={filters.method === "Clinical"}
+                // onChange={() => onFilterChange('method', "Clinical")}
                 className="h-4 w-4 text-blue-600"
               />
               <span className="ml-2 text-gray-700">Clinical</span>
@@ -151,8 +151,8 @@ const FilterSort = ({ filters, onFilterChange, onSortChange }) => {
           <label htmlFor="sort" className="block text-sm font-medium text-gray-700 mb-1">Sorting</label>
           <select
             id="sort"
-            value={filters.sort}
-            onChange={(e) => onSortChange(e.target.value)}
+            // value={filters.sort}
+            // onChange={(e) => onSortChange(e.target.value)}
             className="border border-gray-300 rounded-md px-3 py-2 w-full"
           >
             <option value="projectStartDesc">Project Start (Newest First)</option>

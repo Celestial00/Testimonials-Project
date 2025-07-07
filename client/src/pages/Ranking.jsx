@@ -80,12 +80,7 @@ const RankingPage = () => {
     }
   ];
 
-  // Calculate average grade
-  const averageGrade = (
-    rankingData.reduce((sum, item) => sum + parseFloat(item.grade), 0) / 
-    rankingData.length
-  ).toFixed(1);
-
+ 
   return (
     <div className="min-h-screen bg-gradient-to-br from-white to-blue-200 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">

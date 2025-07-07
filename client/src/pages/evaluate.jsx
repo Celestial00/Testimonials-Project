@@ -17,7 +17,6 @@ export default function EvaluationForm() {
   } = useSlideContext();
   const totalSlides = 5;
 
-  console.log(AllData);
 
   const goNext = () => {
     if (currentSlide === 0 && validateSlide1Ref.current) {
@@ -106,7 +105,7 @@ export default function EvaluationForm() {
         </div>
 
         {/* Progress Bar */}
-        <div className="w-full h-3 bg-blue-100 rounded-sm mb-6 overflow-hidden">
+        <div className="w-full h-8 bg-blue-100 rounded-sm mb-6 overflow-hidden">
           <div
             className="h-full bg-blue-600 transition-all duration-500"
             style={{ width: `${progressPercentage}%` }}
@@ -125,7 +124,17 @@ export default function EvaluationForm() {
         {/* Navigation Buttons */}
 
         {currentSlide === 4 ? (
-          " "
+                     <button
+              onClick={goBack}
+              disabled={currentSlide === 0}
+              className={`px-6 py-3 rounded-md text-white transition ${
+                currentSlide === 0
+                  ? "bg-blue-300 cursor-not-allowed"
+                  : "bg-blue-600 hover:bg-blue-700"
+              }`}
+            >
+              Back
+            </button>
         ) : (
           <div className="flex justify-between w-full">
             <button

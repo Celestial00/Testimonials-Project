@@ -2,11 +2,12 @@ const bcryptjs = require("bcryptjs");
 const adminModel = require("../models/adminModel");
 const jwt = require("jsonwebtoken");
 
+
 const adminControllers = async (req, res) => {
-  const { handle, password } = req.body;
-  
+  const { email, password } = req.body;
+
   try {
-    const Admin = await adminModel.findOne({ handle: handle.toLowerCase() });
+    const Admin = await adminModel.findOne({ email: email.toLowerCase() });
 
     if (!Admin) {
       return res.status(401).json({ msg: "invalid user name" });
@@ -29,3 +30,6 @@ const adminControllers = async (req, res) => {
 };
 
 module.exports = adminControllers;
+
+
+

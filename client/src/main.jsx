@@ -5,9 +5,9 @@ import App from "./App.jsx";
 import { SlideContextProvide } from "./context/SlideContext";
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
+
     <SlideContextProvide>
       <App />
     </SlideContextProvide>
-  </StrictMode>
+  
 );

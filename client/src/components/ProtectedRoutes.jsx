@@ -1,6 +1,7 @@
 import { Navigate, Outlet } from "react-router-dom";
+import Cookies from "js-cookie";
 
 export default function ProtectedRoutes() {
-  const isAuthenticated = true; // Replace with real auth logic
-  return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
+  const token = Cookies.get("token");
+  return token !== undefined ? <Outlet /> : <Navigate to="/admin" />;
 }
