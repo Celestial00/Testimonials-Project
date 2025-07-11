@@ -22,14 +22,18 @@ const Login = () => {
     const res = await fetch("http://localhost:3300/api/auth/admin", {
       method: "POST",
       headers: {
-        "Content-Type": "Application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     });
     const results = await res.json();
-    Cookies.set("token", results.token);
 
-    nav("/dashboard");
+    if (results.res === "401") {
+      alert("invalid password or email");
+    } else {
+      Cookies.set("token", results.token);
+      nav("/dashboard");
+    }
   };
 
   const handleChange = (e) => {
