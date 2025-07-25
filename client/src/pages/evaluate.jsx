@@ -17,7 +17,6 @@ export default function EvaluationForm() {
   } = useSlideContext();
   const totalSlides = 5;
 
-
   const goNext = () => {
     if (currentSlide === 0 && validateSlide1Ref.current) {
       let isValid = validateSlide1Ref.current();
@@ -38,7 +37,6 @@ export default function EvaluationForm() {
     if (currentSlide === 2 && validateSlide3Ref.current) {
       let isValid = validateSlide3Ref.current();
       if (!isValid) {
-        console.log("Form not filled correctly");
         return;
       }
     }
@@ -74,6 +72,7 @@ export default function EvaluationForm() {
     "Give your overall thoughts and final remarks.",
   ];
 
+  const StepNames = ["Review", "Supervision",  "Environment", "case"];
   const progressPercentage = ((currentSlide + 1) / totalSlides) * 100;
 
   return (
@@ -99,7 +98,7 @@ export default function EvaluationForm() {
                   : "text-gray-500"
               }`}
             >
-              {index === 4 ? "Final" : `Step${index + 1}`}
+              {index === 4 ? "Final" : StepNames[index]}
             </span>
           ))}
         </div>
@@ -124,17 +123,17 @@ export default function EvaluationForm() {
         {/* Navigation Buttons */}
 
         {currentSlide === 4 ? (
-                     <button
-              onClick={goBack}
-              disabled={currentSlide === 0}
-              className={`px-6 py-3 rounded-md text-white transition ${
-                currentSlide === 0
-                  ? "bg-blue-300 cursor-not-allowed"
-                  : "bg-blue-600 hover:bg-blue-700"
-              }`}
-            >
-              Back
-            </button>
+          <button
+            onClick={goBack}
+            disabled={currentSlide === 0}
+            className={`px-6 py-3 rounded-md text-white transition ${
+              currentSlide === 0
+                ? "bg-blue-300 cursor-not-allowed"
+                : "bg-blue-600 hover:bg-blue-700"
+            }`}
+          >
+            Back
+          </button>
         ) : (
           <div className="flex justify-between w-full">
             <button

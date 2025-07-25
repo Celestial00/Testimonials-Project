@@ -10,10 +10,7 @@ const ReviewCard = ({ review }) => {
     nav("/Evaluation", { state: { formData: ViewData, Tag: "user" } });
   };
 
-  const date = new Date(projectDetails.projectStartDate);
-  const formatted = `${date.getFullYear()}-${String(
-    date.getMonth() + 1
-  ).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+  //   MethodOtherSpecify, formOtherSpecify
 
   return (
     <div
@@ -36,7 +33,7 @@ const ReviewCard = ({ review }) => {
                 Specialization
               </th>
               <th className="text-left py-2 px-4 font-medium text-gray-600">
-                Project start
+                Format
               </th>
               <th className="text-left py-2 px-4 font-medium text-gray-600">
                 Research method
@@ -48,9 +45,15 @@ const ReviewCard = ({ review }) => {
               <td className="py-2 px-4 text-gray-700">
                 {universityDetails.speciality}
               </td>
-              <td className="py-2 px-4 text-gray-700">{formatted}</td>
               <td className="py-2 px-4 text-gray-700">
-                {projectDetails.researchMethodology}
+                {projectDetails.dissertationFormat === "other"
+                  ? projectDetails.MethodOtherSpecify
+                  : projectDetails.dissertationFormat}
+              </td>
+              <td className="py-2 px-4 text-gray-700">
+                {projectDetails.researchMethodology === "other"
+                  ? projectDetails.MethodOtherSpecify
+                  : projectDetails.researchMethodology  }
               </td>
             </tr>
           </tbody>

@@ -40,6 +40,7 @@ function App() {
 
           <Route element={<ProtectedRoutes />}>
             <Route path="/dashboard" element={<Dashboard />} />
+      
           </Route>
 
           <Route path="*" element={<NotFound />} />

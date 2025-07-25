@@ -1,120 +1,86 @@
+
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ReviewCard from "../components/Reviewcard";
 import FilterSort from "../components/FilterSort";
-import useFetch from "../hooks/useFetch";
 
 const ReviewsPage = () => {
-  
-  const { data, loading, error } = useFetch("user");
+  const [data, setData] = useState(null);
+  const [role, setRole] = useState("user");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [filters, setFilters] = useState({
+    university: "",
+    country: "",
+  });
+  const [sortOption, setSortOption] = useState("projectStartDesc");
 
-  // const [reviews, setReviews] = useState([]);
-  // const [filters, setFilters] = useState({
-  //   university: "",
-  //   specialization: "",
-  //   country: "",
-  //   compulsorySabbatical: "",
-  //   form: "",
-  //   method: "",
-  //   sort: "projectStartDesc",
-  // });
+  const fetchData = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch("http://localhost:3300/api/Testimonials/get", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
-  // useEffect(() => {
-  //   if (data) {
-  //     setReviews(
-  //       data.map((d, i) => ({
-  //         id: d._id || i,
-  //         university: d.universityDetails?.selectedUniversity,
-  //         specification: d.universityDetails?.speciality,
-  //         projectStart: d.projectDetails?.projectStartDate,
-  //         researchMethod: d.projectDetails?.researchMethodology,
-  //         country: d.universityDetails?.selectedCountry,
-  //         compulsorySabbatical:
-  //           d.projectDetails?.freeSemesters === "yes" ? "Yes" : "No",
-  //         form: d.projectDetails?.dissertationFormat,
-  //         full: d, // for sending full to next page
-  //       }))
-  //     );
-  //   }
-  // }, [data]);
+      const result = await res.json();
+      const filteredData =
+        role === "admin"
+          ? result.data
+          : result.data.filter((d) => d.approved === true);
 
-  // const handleFilterChange = (filterName, value) => {
-  //   const newFilters = { ...filters, [filterName]: value };
-  //   setFilters(newFilters);
-  //   applyFiltersAndSort(newFilters, reviews);
-  // };
+      setData(filteredData);
+    } catch (err) {
+      setError(err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-  // const handleSortChange = (sortOption) => {
-  //   const newFilters = { ...filters, sort: sortOption };
-  //   setFilters(newFilters);
-  //   applyFiltersAndSort(newFilters, reviews);
-  // };
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-  // const applyFiltersAndSort = (filterValues, originalList) => {
-  //   let filtered = [...originalList];
+  const handleFilterChange = (key, value) => {
+    setFilters((prev) => ({
+      ...prev,
+      [key]: value,
+    }));
+  };
 
-  //   if (filterValues.university) {
-  //     filtered = filtered.filter(
-  //       (review) => review.university === filterValues.university
-  //     );
-  //   }
+  const handleSortChange = (value) => {
+    setSortOption(value);
+  };
 
-  //   if (filterValues.specialization) {
-  //     filtered = filtered.filter(
-  //       (review) => review.specification === filterValues.specialization
-  //     );
-  //   }
+ 
 
-  //   if (filterValues.country) {
-  //     filtered = filtered.filter(
-  //       (review) => review.country === filterValues.country
-  //     );
-  //   }
 
-  //   if (filterValues.compulsorySabbatical) {
-  //     filtered = filtered.filter(
-  //       (review) =>
-  //         review.compulsorySabbatical === filterValues.compulsorySabbatical
-  //     );
-  //   }
+  const filteredAndSortedData = data
+    ? data
+        .filter((review) => {
 
-  //   if (filterValues.form) {
-  //     filtered = filtered.filter((review) => review.form === filterValues.form);
-  //   }
-
-  //   if (filterValues.method) {
-  //     filtered = filtered.filter(
-  //       (review) => review.researchMethod === filterValues.method
-  //     );
-  //   }
-
-  //   switch (filterValues.sort) {
-  //     case "projectStartDesc":
-  //       filtered.sort(
-  //         (a, b) => new Date(b.projectStart) - new Date(a.projectStart)
-  //       );
-  //       break;
-  //     case "projectStartAsc":
-  //       filtered.sort(
-  //         (a, b) => new Date(a.projectStart) - new Date(b.projectStart)
-  //       );
-  //       break;
-  //     case "universityAsc":
-  //       filtered.sort((a, b) => a.university.localeCompare(b.university));
-  //       break;
-  //     case "universityDesc":
-  //       filtered.sort((a, b) => b.university.localeCompare(a.university));
-  //       break;
-  //     default:
-  //       break;
-  //   }
-
-  //   setReviews(filtered);
-  // };
-
-  // console.log("====================================");
-  // console.log(reviews.full);
-  // console.log("====================================");
+         
+          const matchesUniversity = filters.university
+            ? review.universityDetails.selectedUniversity
+                ?.toLowerCase()
+                .includes(filters.university.toLowerCase())
+            : true;
+          const matchesCountry = filters.country
+            ? review.universityDetails.selectedCountry === filters.country
+            : true;
+          return matchesUniversity && matchesCountry;
+        })
+        .sort((a, b) => {
+          if (sortOption === "projectStartDesc") {
+            return new Date(b.projectStart) - new Date(a.projectStart);
+          } else if (sortOption === "projectStartAsc") {
+            return new Date(a.projectStart) - new Date(b.projectStart);
+          }
+          return 0;
+        })
+    : null;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-white to-blue-200 py-8 px-4 sm:px-6 lg:px-8">
@@ -122,9 +88,9 @@ const ReviewsPage = () => {
         <h1 className="text-3xl font-bold text-gray-900 mb-8">All reviews</h1>
 
         <FilterSort
-        // filters={filters}
-        // onFilterChange={handleFilterChange}
-        // onSortChange={handleSortChange}
+          filters={filters}
+          onFilterChange={handleFilterChange}
+          onSortChange={handleSortChange}
         />
 
         <div className="space-y-4">
@@ -132,10 +98,10 @@ const ReviewsPage = () => {
             <p className="text-gray-500">Loading reviews...</p>
           ) : error ? (
             <p className="text-red-500">Error: {error.message}</p>
-          ) : data === null ? (
+          ) : filteredAndSortedData === null || filteredAndSortedData.length === 0 ? (
             <p>No available reviews.</p>
           ) : (
-            data.map((review) => (
+            filteredAndSortedData.map((review) => (
               <ReviewCard key={review._id} review={review} />
             ))
           )}

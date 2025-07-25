@@ -50,8 +50,13 @@ const HeroSection = () => {
             </div>
           </Link>
           {/* Box 4 */}
-   
         </div>
+
+        <p className=" mt-10 text-gray-500 text-xl">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
+          ea adipisci eum sit perferendis dolores eos iure corrupti placeat
+          voluptatem!
+        </p>
       </div>
     </section>
   );

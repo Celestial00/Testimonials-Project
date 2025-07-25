@@ -18,9 +18,7 @@ export default function SlideThree() {
   const [scopeOfWork, setScopeOfWork] = useState(
     SlideData !== null ? SlideData.scopeOfWork : ""
   );
-  const [overallGrade, setOverallGrade] = useState(
-    SlideData !== null ? SlideData.overallGrade : ""
-  );
+
   const [errors, setErrors] = useState({});
 
   const DependencyArr = [
@@ -28,7 +26,6 @@ export default function SlideThree() {
     workingGroup,
     structurePlanning,
     scopeOfWork,
-    overallGrade,
   ];
 
   const validateForm = () => {
@@ -42,8 +39,6 @@ export default function SlideThree() {
       newErrors.structurePlanning = "Please select a structure/planning grade.";
     if (!scopeOfWork)
       newErrors.scopeOfWork = "Please select a scope of work grade.";
-    if (!overallGrade)
-      newErrors.overallGrade = "Please select an overall grade.";
 
     setErrors(newErrors);
 
@@ -52,7 +47,12 @@ export default function SlideThree() {
       workingGroup,
       structurePlanning,
       scopeOfWork,
-      overallGrade,
+      overallGrade:
+        ((Number(communication) || 0) +
+          (Number(workingGroup) || 0) +
+          (Number(structurePlanning) || 0) +
+          (Number(scopeOfWork) || 0)) /
+        4,
     };
 
     if (Object.keys(newErrors).length === 0) {
@@ -171,23 +171,13 @@ export default function SlideThree() {
 
         <label className="block mb-4 font-medium text-gray-700">
           Overall grade:
-          <select
-            className="w-full p-3 rounded-[10px] border border-gray-300 mt-1"
-            value={overallGrade}
-            onChange={(e) => setOverallGrade(e.target.value)}
-          >
-            <option value="" disabled>
-              [ 1-6]
-            </option>
-            {options.map((n) => (
-              <option key={n} value={n}>
-                {n}
-              </option>
-            ))}
-          </select>
-          {errors.overallGrade && (
-            <p className="text-red-500 text-sm mt-1">{errors.overallGrade}</p>
-          )}
+          <p>
+            {((Number(communication) || 0) +
+              (Number(workingGroup) || 0) +
+              (Number(structurePlanning) || 0) +
+              (Number(scopeOfWork) || 0)) /
+              4}
+          </p>
         </label>
       </div>
     </div>

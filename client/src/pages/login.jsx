@@ -8,6 +8,8 @@ const Login = () => {
     password: "",
   });
 
+  const [err, setErr] = useState("");
+
   const nav = useNavigate();
 
   useEffect(() => {
@@ -19,20 +21,33 @@ const Login = () => {
   const HandleLogin = async (e) => {
     e.preventDefault();
 
-    const res = await fetch("http://localhost:3300/api/auth/admin", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
-    const results = await res.json();
+    if (!data.email || !data.password) {
+      alert("Please fill in all fields");
+      return;
+    }
 
-    if (results.res === "401") {
-      alert("invalid password or email");
-    } else {
-      Cookies.set("token", results.token);
-      nav("/dashboard");
+    try {
+      const res = await fetch("http://localhost:3300/api/auth/admin", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const results = await res.json();
+
+      if (results.res === "401") {
+        alert(`Message: ` + results.msg);
+      } else {
+        Cookies.set("token", results.token);
+        nav("/dashboard");
+      }
+    } catch (error) {
+      console.error("Admin login error:", error); // Add this line
+      res
+        .status(500)
+        .json({ error: "Internal Server Error", message: error.message });
     }
   };
 

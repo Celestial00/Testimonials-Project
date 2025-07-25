@@ -13,15 +13,7 @@ export default function SlideExact() {
   const [workingGroup, setWorkingGroup] = useState(
     SlideData !== null ? SlideData.workingGroup : ""
   );
-  const [recommendations, setRecommendations] = useState(
-    SlideData !== null ? SlideData.recommendations : ""
-  );
-  const [improvement, setImprovement] = useState(
-    SlideData !== null ? SlideData.improvement : ""
-  );
-  const [finalGrade, setFinalGrade] = useState(
-    SlideData !== null ? SlideData.finalGrade : ""
-  );
+
   const [dissertationGrade, setDissertationGrade] = useState(
     SlideData !== null ? SlideData.dissertationGrade : ""
   );
@@ -37,9 +29,7 @@ export default function SlideExact() {
     care,
     researchTopic,
     workingGroup,
-    recommendations,
-    improvement,
-    finalGrade,
+
     dissertationGrade,
     name,
     gender,
@@ -56,13 +46,7 @@ export default function SlideExact() {
       newErrors.researchTopic = "Research topic is required.";
     if (!workingGroup.trim())
       newErrors.workingGroup = "Working group is required.";
-    if (!recommendations.trim())
-      newErrors.recommendations = "Recommendations required.";
-    if (!improvement.trim())
-      newErrors.improvement = "Improvement suggestions required.";
-    if (!finalGrade) newErrors.finalGrade = "Final grade is required.";
-    if (!dissertationGrade)
-      newErrors.dissertationGrade = "Dissertation grade is required.";
+
     if (!name.trim()) newErrors.name = "Name is required.";
     if (!gender) newErrors.gender = "Gender is required.";
     if (!email.trim()) newErrors.email = "Email is required.";
@@ -73,10 +57,6 @@ export default function SlideExact() {
       care,
       researchTopic,
       workingGroup,
-      recommendations,
-      improvement,
-      finalGrade,
-      dissertationGrade,
       name,
       gender,
       email,
@@ -97,26 +77,25 @@ export default function SlideExact() {
     <div className="w-full space-y-6 max-w-screen">
       <label className="block font-medium text-gray-700">
         Care:
-        <input
+        <textarea
+          cols={10}
           type="text"
           value={care}
           onChange={(e) => setCare(e.target.value)}
-          className="w-full p-3 rounded-[10px] border border-gray-300 mt-1"
-          placeholder="____________"
-    
+          className="w-full p-4 rounded-[10px] h-[13rem] border border-gray-300 mt-1"
+          placeholder="care"
         />
         {errors.care && <p className="text-red-500 text-sm">{errors.care}</p>}
       </label>
 
       <label className="block font-medium text-gray-700">
         Research topic:
-        <input
+        <textarea
           type="text"
           value={researchTopic}
           onChange={(e) => setResearchTopic(e.target.value)}
-          className="w-full p-3 rounded-[10px] border border-gray-300 mt-1"
-          placeholder="____________"
-       
+          className="w-full p-3 rounded-[10px] h-[13rem] border border-gray-300 mt-1"
+          placeholder=""
         />
         {errors.researchTopic && (
           <p className="text-red-500 text-sm">{errors.researchTopic}</p>
@@ -125,84 +104,15 @@ export default function SlideExact() {
 
       <label className="block font-medium text-gray-700">
         Working group / Chair:
-        <input
+        <textarea
           type="text"
           value={workingGroup}
           onChange={(e) => setWorkingGroup(e.target.value)}
-          className="w-full p-3 rounded-[10px] border border-gray-300 mt-1"
-          placeholder="____________"
-          
+          className="w-full p-3 rounded-[10px] h-[13rem] border border-gray-300 mt-1"
+          placeholder=""
         />
         {errors.workingGroup && (
           <p className="text-red-500 text-sm">{errors.workingGroup}</p>
-        )}
-      </label>
-
-      <label className="block font-medium text-gray-700">
-        Recommendations / Tips:
-        <input
-          type="text"
-          value={recommendations}
-          onChange={(e) => setRecommendations(e.target.value)}
-          className="w-full p-3 rounded-[10px] border border-gray-300 mt-1"
-          placeholder="____________"
-  
-        />
-        {errors.recommendations && (
-          <p className="text-red-500 text-sm">{errors.recommendations}</p>
-        )}
-      </label>
-
-      <label className="block font-medium text-gray-700">
-        Improvement requests / suggestions:
-        <input
-          type="text"
-          value={improvement}
-          onChange={(e) => setImprovement(e.target.value)}
-          className="w-full p-3 rounded-[10px] border border-gray-300 mt-1"
-          placeholder="____________"
-          
-        />
-        {errors.improvement && (
-          <p className="text-red-500 text-sm">{errors.improvement}</p>
-        )}
-      </label>
-
-      <label className="block font-medium text-gray-700">
-        Final grade:
-        <select
-          value={finalGrade}
-          onChange={(e) => setFinalGrade(e.target.value)}
-          className="w-full p-3 rounded-[10px] border border-gray-300 mt-1"
-        >
-          <option value="" disabled></option>
-          {gradeOptions.map((n) => (
-            <option key={n} value={n}>
-              {n}
-            </option>
-          ))}
-        </select>
-        {errors.finalGrade && (
-          <p className="text-red-500 text-sm">{errors.finalGrade}</p>
-        )}
-      </label>
-
-      <label className="block font-medium text-gray-700">
-        Final grade of your dissertation:
-        <select
-          value={dissertationGrade}
-          onChange={(e) => setDissertationGrade(e.target.value)}
-          className="w-full p-3 rounded-[10px] border border-gray-300 mt-1"
-        >
-          <option value="" disabled></option>
-          {gradeOptions.map((n) => (
-            <option key={n} value={n}>
-              {n}
-            </option>
-          ))}
-        </select>
-        {errors.dissertationGrade && (
-          <p className="text-red-500 text-sm">{errors.dissertationGrade}</p>
         )}
       </label>
 
@@ -219,8 +129,7 @@ export default function SlideExact() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             className="w-full p-3 rounded-[10px] border border-gray-300 mt-1"
-            placeholder="____________"
-         
+            placeholder=""
           />
           {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
         </label>
@@ -247,17 +156,16 @@ export default function SlideExact() {
       <label className="font-medium text-gray-700 flex-1">
         Email:
         <input
-          type="text"
+          type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           className="w-full p-3 rounded-[10px] border border-gray-300 mt-1 mb-4"
-          placeholder="____________"
-        
+          placeholder=""
         />
         {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
       </label>
 
-      <label className="block font-medium text-gray-700 flex items-center gap-2">
+      <label className=" font-medium text-gray-700 flex items-center gap-2">
         <input
           type="checkbox"
           checked={anonymousContact}

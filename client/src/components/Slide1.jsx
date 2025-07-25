@@ -4,6 +4,7 @@ import { useSlideContext } from "../context/SlideContext";
 
 export default function SlideOne({ Validate }) {
   const { countries } = MockData;
+  const [avaliableDept, setAvaliableDept] = useState([]);
   const { validateSlide1Ref, getDataSlide1, AllData } = useSlideContext();
   const Slide1Data = AllData[0];
   const [selectedCountry, setSelectedCountry] = useState(
@@ -53,8 +54,7 @@ export default function SlideOne({ Validate }) {
     if (!selectedCity) newErrors.selectedCity = "City is required.";
     if (!selectedUniversity)
       newErrors.selectedUniversity = "Institution is required.";
-    if (!workingGroup.trim())
-      newErrors.workingGroup = "Working group is required.";
+
     if (!department) newErrors.department = "Department is required.";
     if (!speciality) newErrors.speciality = "Speciality is required.";
 
@@ -77,6 +77,29 @@ export default function SlideOne({ Validate }) {
   };
 
   useEffect(() => {
+    const getDepts = async () => {
+      try {
+        const response = await fetch(
+          "http://localhost:3300/api/dept/Departments",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+
+        const Results = await response.json();
+        setAvaliableDept(Results.Data);
+      } catch (err) {
+        console.log("Err:", err);
+      }
+    };
+
+    getDepts();
+  }, []);
+
+  useEffect(() => {
     validateSlide1Ref.current = validateForm;
   }, [
     selectedCountry,
@@ -91,6 +114,7 @@ export default function SlideOne({ Validate }) {
     `w-full p-3 rounded-[10px] border ${
       hasError ? "border-red-500" : "border-gray-300"
     }`;
+
 
   return (
     <div className="w-full">
@@ -108,11 +132,13 @@ export default function SlideOne({ Validate }) {
             <option value="" disabled>
               Select Country
             </option>
-            {countries.map((country, index) => (
-              <option key={index} value={country.name}>
-                {country.name}
-              </option>
-            ))}
+            {countries
+              .sort((a, b) => a.name.localeCompare(b.name))
+              .map((country, index) => (
+                <option key={index} value={country.name}>
+                  {country.name}
+                </option>
+              ))}
           </select>
           {errors.selectedCountry && (
             <p className="text-red-500 text-sm mt-1">
@@ -132,11 +158,14 @@ export default function SlideOne({ Validate }) {
             <option value="" disabled>
               Select City
             </option>
-            {selectedCountryData?.cities.map((city, index) => (
-              <option key={index} value={city.name}>
-                {city.name}
-              </option>
-            ))}
+            {selectedCountryData?.cities
+              ?.slice()
+              .sort((a, b) => a.name.localeCompare(b.name))
+              .map((city, index) => (
+                <option key={index} value={city.name}>
+                  {city.name}
+                </option>
+              ))}
           </select>
           {errors.selectedCity && (
             <p className="text-red-500 text-sm mt-1">{errors.selectedCity}</p>
@@ -202,8 +231,9 @@ export default function SlideOne({ Validate }) {
             <option value="" disabled>
               Select Department
             </option>
-            <option>Computer Science</option>
-            <option>Engineering</option>
+            {avaliableDept.map((dept, i) => (
+              <option key={i}>{dept.Name}</option>
+            ))}
           </select>
           {errors.department && (
             <p className="text-red-500 text-sm mt-1">{errors.department}</p>
@@ -211,20 +241,15 @@ export default function SlideOne({ Validate }) {
         </div>
 
         <div className="flex-1">
-          <label className="block mb-1 font-medium text-gray-700">
+          <label className="block mb-1  font-medium text-gray-700">
             Speciality
           </label>
-          <select
+          <input
             className={inputClass(errors.speciality)}
             value={speciality}
             onChange={(e) => setSpeciality(e.target.value)}
-          >
-            <option value="" disabled>
-              Select Speciality
-            </option>
-            <option>Machine Learning</option>
-            <option>Data Science</option>
-          </select>
+            placeholder="Select Speciality"
+          ></input>
           {errors.speciality && (
             <p className="text-red-500 text-sm mt-1">{errors.speciality}</p>
           )}

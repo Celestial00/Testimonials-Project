@@ -1,0 +1,717 @@
+[
+  {
+    "name": "Technische Universität Chemnitz",
+    "city": "Chemnitz",
+    "country": "Germany"
+  },
+  {
+    "name": "Universität Hohenheim",
+    "city": "Hohenheim",
+    "country": "Germany"
+  },
+  {
+    "name": "Hochschule Bremen",
+    "city": "Bremen",
+    "country": "Germany"
+  },
+  {
+    "name": "Universität Bremen",
+    "city": "Bremen",
+    "country": "Germany"
+  },
+  {
+    "name": "Hochschule Hannover",
+    "city": "Hannover",
+    "country": "Germany"
+  },
+  {
+    "name": "Gottfried Wilhelm Leibniz Universität Hannover",
+    "city": "Hannover",
+    "country": "Germany"
+  },
+  {
+    "name": "Technische Hochschule Deggendorf",
+    "city": "Deggendorf",
+    "country": "Germany"
+  },
+  {
+    "name": "Hochschule Fulda",
+    "city": "Fulda",
+    "country": "Germany"
+  },
+  {
+    "name": "Hochschule Koblenz",
+    "city": "Koblenz",
+    "country": "Germany"
+  },
+  {
+    "name": "Uni Koblenz",
+    "city": "Koblenz",
+    "country": "Germany"
+  },
+  {
+    "name": "Hochschule Bonn-Rhein-Sieg",
+    "city": "Sankt Augustin",
+    "country": "Germany"
+  },
+  {
+    "name": "Leuphana Universität Lüneburg",
+    "city": "Lüneburg",
+    "country": "Germany"
+  },
+  {
+    "name": "Technische Hochschule Würzburg-Schweinfurt",
+    "city": "Schweinfurt",
+    "country": "Germany"
+  },
+  {
+    "name": "Universität Ulm",
+    "city": "Ulm",
+    "country": "Germany"
+  },
+  {
+    "name": "Europäische Fernhochschule Hamburg",
+    "city": "Hamburg",
+    "country": "Germany"
+  },
+  {
+    "name": "Hamburger Fern-Hochschule, gemeinnützige GmbH",
+    "city": "Hamburg",
+    "country": "Germany"
+  },
+  {
+    "name": "Hochschule für Angewandte Wissenschaften Hamburg",
+    "city": "Hamburg",
+    "country": "Germany"
+  },
+  {
+    "name": "Universität Hamburg",
+    "city": "Hamburg",
+    "country": "Germany"
+  },
+  {
+    "name": "Ostfalia Hochschule für angewandte Wissenschaften",
+    "city": "Wolfenbüttel",
+    "country": "Germany"
+  },
+  {
+    "name": "Hochschule Bielefeld",
+    "city": "Bielefeld",
+    "country": "Germany"
+  },
+  {
+    "name": "Universität Bielefeld",
+    "city": "Bielefeld",
+    "country": "Germany"
+  },
+  {
+    "name": "Universität Greifswald",
+    "city": "Greifswald",
+    "country": "Germany"
+  },
+  {
+    "name": "Universität Konstanz",
+    "city": "Konstanz",
+    "country": "Germany"
+  },
+  {
+    "name": "Universität Trier",
+    "city": "Trier",
+    "country": "Germany"
+  },
+  {
+    "name": "Fachhochschule Südwestfalen",
+    "city": "Iserlohn",
+    "country": "Germany"
+  },
+  {
+    "name": "Ostbayerische Technische Hochschule Regensburg",
+    "city": "Regensburg",
+    "country": "Germany"
+  },
+  {
+    "name": "Universität Regensburg",
+    "city": "Regensburg",
+    "country": "Germany"
+  },
+  {
+    "name": "Otto-Friedrich-Universität Bamberg",
+    "city": "Bamberg",
+    "country": "Germany"
+  },
+  {
+    "name": "Hochschule Düsseldorf",
+    "city": "Düsseldorf",
+    "country": "Germany"
+  },
+  {
+    "name": "Heinrich-Heine-Universität Düsseldorf",
+    "city": "Düsseldorf",
+    "country": "Germany"
+  },
+  {
+    "name": "Universität Passau",
+    "city": "Passau",
+    "country": "Germany"
+  },
+  {
+    "name": "Universität Mannheim",
+    "city": "Mannheim",
+    "country": "Germany"
+  },
+  {
+    "name": "Universität Bayreuth",
+    "city": "Bayreuth",
+    "country": "Germany"
+  },
+  {
+    "name": "Berliner Hochschule für Technik",
+    "city": "Berlin",
+    "country": "Germany"
+  },
+  {
+    "name": "Hochschule für Wirtschaft und Recht Berlin",
+    "city": "Berlin",
+    "country": "Germany"
+  },
+  {
+    "name": "Hochschule für Technik und Wirtschaft Berlin",
+    "city": "Berlin",
+    "country": "Germany"
+  },
+  {
+    "name": "Technische Universität Berlin",
+    "city": "Berlin",
+    "country": "Germany"
+  },
+  {
+    "name": "Humboldt-Universität zu Berlin",
+    "city": "Berlin",
+    "country": "Germany"
+  },
+  {
+    "name": "Freie Universität Berlin",
+    "city": "Berlin",
+    "country": "Germany"
+  },
+  {
+    "name": "Hochschule RheinMain",
+    "city": "Wiesbaden",
+    "country": "Germany"
+  },
+  {
+    "name": "Technische Hochschule Nürnberg Georg Simon Ohm",
+    "city": "Nürnberg",
+    "country": "Germany"
+  },
+  {
+    "name": "Friedrich-Alexander-Universität Erlangen-Nürnberg",
+    "city": "Nürnberg",
+    "country": "Germany"
+  },
+  {
+    "name": "Otto-von-Guericke-Universität Magdeburg",
+    "city": "Magdeburg",
+    "country": "Germany"
+  },
+  {
+    "name": "Universität Rostock",
+    "city": "Rostock",
+    "country": "Germany"
+  },
+  {
+    "name": "Hochschule Niederrhein",
+    "city": "Niederrhein",
+    "country": "Germany"
+  },
+  {
+    "name": "Hochschule Osnabrück",
+    "city": "Osnabrück",
+    "country": "Germany"
+  },
+  {
+    "name": "Universität Osnabrück",
+    "city": "Osnabrück",
+    "country": "Germany"
+  },
+  {
+    "name": "FH Aachen",
+    "city": "Aachen",
+    "country": "Germany"
+  },
+  {
+    "name": "Rheinisch-Westfälische Technische Hochschule Aachen",
+    "city": "Aachen",
+    "country": "Germany"
+  },
+  {
+    "name": "Fachhochschule Dortmund",
+    "city": "Dortmund",
+    "country": "Germany"
+  },
+  {
+    "name": "Technische Universität Dortmund",
+    "city": "Dortmund",
+    "country": "Germany"
+  },
+  {
+    "name": "Hochschule Darmstadt",
+    "city": "Darmstadt",
+    "country": "Germany"
+  },
+  {
+    "name": "Technische Universität Darmstadt",
+    "city": "Darmstadt",
+    "country": "Germany"
+  },
+  {
+    "name": "Carl von Ossietzky Universität Oldenburg",
+    "city": "Oldenburg",
+    "country": "Germany"
+  },
+  {
+    "name": "Frankfurt University of Applied Sciences",
+    "city": "Frankfurt",
+    "country": "Germany"
+  },
+  {
+    "name": "Johann Wolfgang Goethe-Universität Frankfurt am Main",
+    "city": "Frankfurt",
+    "country": "Germany"
+  },
+  {
+    "name": "Universität Siegen",
+    "city": "Siegen",
+    "country": "Germany"
+  },
+  {
+    "name": "Technische Hochschule Mittelhessen (THM)",
+    "city": "Gießen",
+    "country": "Germany"
+  },
+  {
+    "name": "Justus-Liebig-Universität Gießen",
+    "city": "Gießen",
+    "country": "Germany"
+  },
+  {
+    "name": "Universität des Saarlandes",
+    "city": "Saarlandes",
+    "country": "Germany"
+  },
+  {
+    "name": "Technische Universität Carolo-Wilhelmina zu Braunschweig",
+    "city": "Braunschweig",
+    "country": "Germany"
+  },
+  {
+    "name": "Friedrich-Schiller-Universität Jena",
+    "city": "Jena",
+    "country": "Germany"
+  },
+  {
+    "name": "Universität Paderborn",
+    "city": "Paderborn",
+    "country": "Germany"
+  },
+  {
+    "name": "HM Hochschule München",
+    "city": "München",
+    "country": "Germany"
+  },
+  {
+    "name": "Ludwig-Maximilians-Universität München",
+    "city": "München",
+    "country": "Germany"
+  },
+  {
+    "name": "Technische Universität München",
+    "city": "München",
+    "country": "Germany"
+  },
+  {
+    "name": "RPTU Kaiserslautern-Landau",
+    "city": "Kaiserslautern",
+    "country": "Germany"
+  },
+  {
+    "name": "Universität Augsburg",
+    "city": "Augsburg",
+    "country": "Germany"
+  },
+  {
+    "name": "Martin-Luther-Universität Halle-Wittenberg",
+    "city": "Wittenberg",
+    "country": "Germany"
+  },
+  {
+    "name": "Universität Potsdam",
+    "city": "Potsdam",
+    "country": "Germany"
+  },
+  {
+    "name": "Universität Kassel",
+    "city": "Kassel",
+    "country": "Germany"
+  },
+  {
+    "name": "Universität Stuttgart",
+    "city": "Stuttgart",
+    "country": "Germany"
+  },
+  {
+    "name": "Philipps-Universität Marburg",
+    "city": "Marburg",
+    "country": "Germany"
+  },
+  {
+    "name": "Bergische Universität Wuppertal",
+    "city": "Wuppertal",
+    "country": "Germany"
+  },
+  {
+    "name": "Technische Hochschule Köln",
+    "city": "Köln",
+    "country": "Germany"
+  },
+  {
+    "name": "Universität zu Köln",
+    "city": "Köln",
+    "country": "Germany"
+  },
+  {
+    "name": "Karlsruher Institut für Technologie (KIT)",
+    "city": "Karlsruhe",
+    "country": "Germany"
+  },
+  {
+    "name": "Universität Freiburg",
+    "city": "Freiburg",
+    "country": "Germany"
+  },
+  {
+    "name": "Christian-Albrechts-Universität zu Kiel",
+    "city": "Kiel",
+    "country": "Germany"
+  },
+  {
+    "name": "Julius-Maximilians-Universität Würzburg",
+    "city": "Würzburg",
+    "country": "Germany"
+  },
+  {
+    "name": "Georg-August-Universität Göttingen",
+    "city": "Göttingen",
+    "country": "Germany"
+  },
+  {
+    "name": "Technische Universität Dresden",
+    "city": "Dresden",
+    "country": "Germany"
+  },
+  {
+    "name": "Eberhard Karls Universität Tübingen",
+    "city": "Tübingen",
+    "country": "Germany"
+  },
+  {
+    "name": "Ruprecht-Karls-Universität Heidelberg",
+    "city": "Heidelberg",
+    "country": "Germany"
+  },
+  {
+    "name": "Johannes Gutenberg-Universität Mainz",
+    "city": "Mainz",
+    "country": "Germany"
+  },
+  {
+    "name": "Universität Leipzig",
+    "city": "Leipzig",
+    "country": "Germany"
+  },
+  {
+    "name": "Duale Hochschule Baden-Württemberg",
+    "city": "Württemberg",
+    "country": "Germany"
+  },
+  {
+    "name": "Rheinische Friedrich-Wilhelms-Universität Bonn",
+    "city": "Bonn",
+    "country": "Germany"
+  },
+  {
+    "name": "Universität Duisburg-Essen",
+    "city": "Essen",
+    "country": "Germany"
+  },
+  {
+    "name": "Ruhr-Universität Bochum",
+    "city": "Bochum",
+    "country": "Germany"
+  },
+  {
+    "name": "Fachhochschule Münster University of Applied Sciences",
+    "city": "Münster",
+    "country": "Germany"
+  },
+  {
+    "name": "Universität Münster",
+    "city": "Münster",
+    "country": "Germany"
+  },
+  {
+    "name": "FernUniversität in Hagen",
+    "city": "Hagen",
+    "country": "Germany"
+  },
+  {
+    "name": "IU Internationale Hochschule",
+    "city": "Hochschule",
+    "country": "Germany"
+  },
+  {
+    "name": "Universität Wien",
+    "city": "Wien",
+    "country": "Austria"
+  },
+  {
+    "name": "Medizinische Universität Wien",
+    "city": "Wien",
+    "country": "Austria"
+  },
+  {
+    "name": "Technische Universität Wien",
+    "city": "Wien",
+    "country": "Austria"
+  },
+  {
+    "name": "Universität für Bodenkultur Wien",
+    "city": "Wien",
+    "country": "Austria"
+  },
+  {
+    "name": "Veterinärmedizinische Universität Wien",
+    "city": "Wien",
+    "country": "Austria"
+  },
+  {
+    "name": "Wirtschaftsuniversität Wien",
+    "city": "Wien",
+    "country": "Austria"
+  },
+  {
+    "name": "Universität für angewandte Kunst Wien",
+    "city": "Wien",
+    "country": "Austria"
+  },
+  {
+    "name": "Universität für Musik und darstellende Kunst Wien",
+    "city": "Wien",
+    "country": "Austria"
+  },
+  {
+    "name": "Akademie der bildenden Künste Wien",
+    "city": "Wien",
+    "country": "Austria"
+  },
+  {
+    "name": "JAM MUSIC LAB Private University for Jazz and Popular Music Vienna",
+    "city": "Wien",
+    "country": "Austria"
+  },
+  {
+    "name": "MODUL University Private University Vienna",
+    "city": "Wien",
+    "country": "Austria"
+  },
+  {
+    "name": "Musik und Kunst Privatuniversität der Stadt Wien",
+    "city": "Wien",
+    "country": "Austria"
+  },
+  {
+    "name": "Sigmund Freud Privatuniversität",
+    "city": "Wien",
+    "country": "Austria"
+  },
+  {
+    "name": "Webster Vienna Private University",
+    "city": "Wien",
+    "country": "Austria"
+  },
+  {
+    "name": "Karl-Franzens-Universität Graz",
+    "city": "Graz",
+    "country": "Austria"
+  },
+  {
+    "name": "Medizinische Universität Graz",
+    "city": "Graz",
+    "country": "Austria"
+  },
+  {
+    "name": "Technische Universität Graz",
+    "city": "Graz",
+    "country": "Austria"
+  },
+  {
+    "name": "Universität für Musik und darstellende Kunst Graz",
+    "city": "Graz",
+    "country": "Austria"
+  },
+  {
+    "name": "Universität Innsbruck",
+    "city": "Innsbruck",
+    "country": "Austria"
+  },
+  {
+    "name": "Medizinische Universität Innsbruck",
+    "city": "Innsbruck",
+    "country": "Austria"
+  },
+  {
+    "name": "Paris-Lodron-Universität Salzburg",
+    "city": "Salzburg",
+    "country": "Austria"
+  },
+  {
+    "name": "Universität Mozarteum Salzburg",
+    "city": "Salzburg",
+    "country": "Austria"
+  },
+  {
+    "name": "Paracelsus Medizinische Privatuniversität",
+    "city": "Salzburg",
+    "country": "Austria"
+  },
+  {
+    "name": "Institute of Science and Technology Austria",
+    "city": "Klosberneuburg",
+    "country": "Austria"
+  },
+  {
+    "name": "Montanuniversität Leoben",
+    "city": "Leoben",
+    "country": "Austria"
+  },
+  {
+    "name": "Johannes Kepler Universität Linz",
+    "city": "Linz",
+    "country": "Austria"
+  },
+  {
+    "name": "Universität für künstlerische und industrielle Gestaltung Linz",
+    "city": "Linz",
+    "country": "Austria"
+  },
+  {
+    "name": "Anton Bruckner Privatuniversität",
+    "city": "Linz",
+    "country": "Austria"
+  },
+  {
+    "name": "Katholische Privatuniversität Linz",
+    "city": "Linz",
+    "country": "Austria"
+  },
+  {
+    "name": "Alpen-Adria-Universität Klagenfurt",
+    "city": "Klagenfurt",
+    "country": "Austria"
+  },
+  {
+    "name": "Gustav Mahler Privatuniversität für Musik",
+    "city": "Klagenfurt",
+    "country": "Austria"
+  },
+  {
+    "name": "Universität für Weiterbildung Krems (Donau-Universität Krems)",
+    "city": "Krems",
+    "country": "Austria"
+  },
+  {
+    "name": "Karl Landsteiner Privatuniversität für Gesundheitswissenschaften",
+    "city": "Krems",
+    "country": "Austria"
+  },
+  {
+    "name": "Bertha von Suttner Privatuniversität",
+    "city": "St. Pölten",
+    "country": "Austria"
+  },
+  {
+    "name": "New Design University Privatuniversität St.Pölten",
+    "city": "St. Pölten",
+    "country": "Austria"
+  },
+  {
+    "name": "UMIT TIROL – Privatuniversität für Gesundheitswissenschaften und -technologie",
+    "city": "Hall in Tirol",
+    "country": "Austria"
+  },
+  {
+    "name": "Privatuniversität Schloss Seeburg",
+    "city": "Seekirchen",
+    "country": "Austria"
+  },
+  {
+    "name": "Ecole polytechnique fédérale de Lausanne EPFL",
+    "city": "Lausanne",
+    "country": "Switzerland"
+  },
+  {
+    "name": "Université de Lausanne UNIL",
+    "city": "Lausanne",
+    "country": "Switzerland"
+  },
+  {
+    "name": "Eidgenössische Technische Hochschule Zürich ETH",
+    "city": "Zürich",
+    "country": "Switzerland"
+  },
+  {
+    "name": "Universität Zürich UZH",
+    "city": "Zürich",
+    "country": "Switzerland"
+  },
+  {
+    "name": "Universität Basel",
+    "city": "Basel",
+    "country": "Switzerland"
+  },
+  {
+    "name": "Universität Bern UniBE",
+    "city": "Bern",
+    "country": "Switzerland"
+  },
+  {
+    "name": "Université de Fribourg Unifr",
+    "city": "Fribourg",
+    "country": "Switzerland"
+  },
+  {
+    "name": "Université de Genève UNIGE",
+    "city": "Genève",
+    "country": "Switzerland"
+  },
+  {
+    "name": "Universität Luzern Unilu",
+    "city": "Luzern",
+    "country": "Switzerland"
+  },
+  {
+    "name": "Universität Neuenburg UniNE",
+    "city": "Neuenburg",
+    "country": "Switzerland"
+  },
+  {
+    "name": "Universität St. Gallen HSG",
+    "city": "St. Gallen",
+    "country": "Switzerland"
+  },
+  {
+    "name": "Università della Svizzera italiana USI",
+    "city": "Lugano",
+    "country": "Switzerland"
+  }
+]
