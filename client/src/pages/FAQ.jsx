@@ -68,7 +68,7 @@ const FAQPage = () => {
   ];
 
   return (
-  <section className="bg-gradient-to-br w-full from-white to-blue-200 min-h-screen flex items-center justify-center p-10">
+  <section className=" min-h-screen flex items-center justify-center p-10">
   <div className="w-full" style={{ maxWidth: '1200px' }}> {/* Increased max width */}
     <h1 className="text-6xl md:text-7xl font-bold mb-12 text-center text-blue-700">
       FAQ

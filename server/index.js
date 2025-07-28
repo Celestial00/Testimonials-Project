@@ -19,7 +19,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use(Logger);
-// app.use(RateLimiter);
+app.use(RateLimiter);
 
 // Routes
 

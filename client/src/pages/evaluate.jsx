@@ -76,7 +76,7 @@ export default function EvaluationForm() {
   const progressPercentage = ((currentSlide + 1) / totalSlides) * 100;
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-white to-blue-200 p-6">
+    <div className="min-h-screen flex flex-col items-center justify-center  p-6">
       <div className="w-full max-w-4xl flex flex-col items-center justify-center ">
         <div className="w-full mb-4">
           <h2 className="text-5xl text-blue-700 mb-2 text-left">

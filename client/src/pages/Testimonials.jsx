@@ -11,7 +11,7 @@ export default function Testimonials() {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:3300/api/Testimonials/get", {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}api/Testimonials/get`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -39,7 +39,7 @@ export default function Testimonials() {
 
   const handleApprove = async (id) => {
     try {
-      await fetch(`http://localhost:3300/api/Testimonials/approved/${id}`, {
+      await fetch(`${import.meta.env.VITE_BACKEND_URL}api/Testimonials/approved/${id}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ approved: true }),
@@ -53,7 +53,7 @@ export default function Testimonials() {
   };
   const handleDelete = async (id) => {
     try {
-      await fetch(`http://localhost:3300/api/Testimonials/deleted/${id}`, {
+      await fetch(`${import.meta.env.VITE_BACKEND_URL}api/Testimonials/deleted/${id}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
       });

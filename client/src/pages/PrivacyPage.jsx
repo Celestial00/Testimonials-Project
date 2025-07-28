@@ -2,7 +2,7 @@ import React from "react";
 
 const PolicyPage = () => {
   return (
-    <section className="min-h-screen flex items-center bg-gradient-to-br from-white to-blue-200 text-gray-800 px-6 py-16">
+    <section className="min-h-screen flex items-center  text-gray-800 px-6 py-16">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-5xl font-bold mb-10  text-blue-600">
           Impressum & Datenschutz

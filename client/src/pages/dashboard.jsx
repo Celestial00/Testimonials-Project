@@ -8,7 +8,7 @@ import Department from "./Departments";
 
 export default function Dashboard() {
   const nav = useNavigate();
-  const [refresh, setRefresh] = useState();
+
 
 
   const [tab, setTab] = useState("Test");

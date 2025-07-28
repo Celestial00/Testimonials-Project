@@ -27,13 +27,16 @@ const Login = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:3300/api/auth/admin", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_BACKEND_URL}api/auth/admin`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       const results = await res.json();
 
@@ -61,7 +64,7 @@ const Login = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center bg-gradient-to-br from-white to-blue-200 text-gray-800 px-6 py-16">
+    <section className="min-h-screen flex items-center  text-gray-800 px-6 py-16">
       <div className="max-w-md mx-auto w-full bg-white shadow-md rounded-lg p-8">
         <h1 className="text-4xl font-bold mb-8 text-center text-blue-600">
           Login

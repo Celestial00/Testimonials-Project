@@ -19,7 +19,7 @@ export default function EvaluationPage() {
     );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white to-blue-100 px-4 py-12">
+    <div className="min-h-screen  px-4 py-12">
       <div className=" my-10  max-w-7xl mx-auto p-8">
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-3xl font-bold text-blue-700">

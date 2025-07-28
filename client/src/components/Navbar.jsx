@@ -8,19 +8,24 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
+      if (window.innerWidth >= 768) {
+        setScrolled(window.scrollY > 10);
+      } else {
+        setScrolled(false);
+      }
     };
+
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <nav
-      className={`w-full fixed top-0 left-0 z-50 px-6 py-4 font-poppins transition-all duration-300 ${
-        scrolled ? "bg-white " : "bg-transparent"
-      }`}
+      className={`w-full fixed top-0 left-0 z-50 font-poppins transition-all  duration-300 
+        ${scrolled ? "md:bg-white" : "md:bg-transparent"} bg-white`}
     >
-      <div className="flex justify-between items-center max-w-screen mx-auto">
+      <div className="flex justify-between items-center max-w-screen px-4 md:px-6 py-4 mx-auto">
         {/* Logo */}
         <div className="text-2xl font-semibold text-gray-800">Testimonials</div>
 
@@ -29,21 +34,18 @@ const Navbar = () => {
           <Link to="/" className="text-gray-700 hover:text-blue-600 transition">
             Home
           </Link>
-
           <Link
             to="/reviews"
             className="text-gray-700 hover:text-blue-600 transition"
           >
             All Reviews
           </Link>
-
           <Link
             to="/rankings"
             className="text-gray-700 hover:text-blue-600 transition"
           >
             Our Ranking
           </Link>
-
           <Link
             to="/FAQ"
             className="text-gray-700 hover:text-blue-600 transition"
@@ -56,7 +58,6 @@ const Navbar = () => {
           >
             About
           </Link>
-
           <Link to="/evaluate">
             <button className="bg-blue-600 cursor-pointer text-white px-4 py-2 rounded-lg font-semibold shadow hover:opacity-90 transition">
               Evaluate
@@ -77,41 +78,45 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden flex bg-white rounded flex-col items-start gap-4 mt-4 px-6">
-          <Link to="/" className="text-gray-700 hover:text-blue-600 transition">
+        <div className="md:hidden fixed top-[64px] left-0 w-full bg-white px-6 py-4 flex flex-col space-y-4 z-40 shadow-md">
+          <Link
+            to="/"
+            className="text-gray-700 hover:text-blue-600 transition"
+            onClick={() => setIsOpen(false)}
+          >
             Home
           </Link>
           <Link
-            to="/about"
+            to="/reviews"
             className="text-gray-700 hover:text-blue-600 transition"
-          >
-            Evaluate
-          </Link>
-
-          <Link
-            to="/about"
-            className="text-gray-700 hover:text-blue-600 transition"
+            onClick={() => setIsOpen(false)}
           >
             All Reviews
           </Link>
-
           <Link
-            to="/about"
+            to="/rankings"
             className="text-gray-700 hover:text-blue-600 transition"
+            onClick={() => setIsOpen(false)}
           >
             Our Ranking
           </Link>
-
           <Link
-            to="/about"
+            to="/FAQ"
             className="text-gray-700 hover:text-blue-600 transition"
+            onClick={() => setIsOpen(false)}
           >
             FAQ
           </Link>
-
-          <Link to="/evaluate">
+          <Link
+            to="/about"
+            className="text-gray-700 hover:text-blue-600 transition"
+            onClick={() => setIsOpen(false)}
+          >
+            About
+          </Link>
+          <Link to="/evaluate" onClick={() => setIsOpen(false)}>
             <button className="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold shadow hover:opacity-90 transition w-full text-left">
-              Write Testimonial
+              Evaluate
             </button>
           </Link>
         </div>

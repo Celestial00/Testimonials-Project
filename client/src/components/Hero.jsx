@@ -10,7 +10,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-white to-blue-200 flex items-center justify-center px-4 py-10">
+    <section className="min-h-screen  flex items-center justify-center px-4 py-10">
       <div className="text-center w-full max-w-6xl px-4">
         <h1 className="text-2xl mt-20 sm:text-3xl md:text-5xl font-bold text-gray-900 mb-10 sm:mb-12">
           Evaluation For more transparency on the way to becoming a Dr. med.

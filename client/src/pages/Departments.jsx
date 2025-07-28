@@ -7,7 +7,7 @@ export default function Departments() {
 
   const getDepts = async () => {
     try {
-      const res = await fetch("http://localhost:3300/api/dept/Departments", {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}api/dept/Departments`, {
         method: "GET",
       });
       const Results = await res.json();
@@ -23,7 +23,7 @@ export default function Departments() {
 
   const handleDelete = async (_id) => {
     try {
-      let res = await fetch("http://localhost:3300/api/dept/Delete", {
+      let res = await fetch(`${import.meta.env.VITE_BACKEND_URL}api/dept/Delete`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -44,7 +44,7 @@ export default function Departments() {
     }
 
     try {
-      const res = await fetch("http://localhost:3300/api/dept/Add", {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}api/dept/Add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

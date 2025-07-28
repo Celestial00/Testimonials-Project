@@ -10,11 +10,14 @@ export default function SlideThankYou() {
       throw new Error("Data must be an array of exactly 4 objects.");
     }
 
-    const res = await fetch("http://localhost:3300/api/Testimonials/", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(dataArray),
-    });
+    const res = await fetch(
+      `${import.meta.env.VITE_BACKEND_URL}api/Testimonials/`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(dataArray),
+      }
+    );
 
     nav("/ThankYou");
 
